@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
-import 'features/fablab/presentation/widgets/widget1.dart';
+import 'features/fablab/presentation/pages/page1.dart'; // Asegúrate de tener el path correcto.
 
 void main() {
-  runApp(const MyApp()); // Invocando el widget principal desde app_widget.dart
+  runApp(const MyApp()); // Invoca el widget principal
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: HomePage(), // Define tu pantalla principal
+    );
+  }
 }

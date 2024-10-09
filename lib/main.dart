@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'features/fablab/presentation/pages/page1.dart'; // Asegúrate de tener el path correcto.
+import 'features_venta/fablab/presentation/pages/page1.dart'; // Asegúrate de tener el path correcto.
 
 void main() {
   runApp(const MyApp()); // Invoca el widget principal

@@ -46,7 +46,7 @@ class Menudrawer extends StatelessWidget {
                         child: Padding(
                           padding: EdgeInsets.only(bottom: 30, left: 45),
                           child: Text(
-                            'Akatsuki Uchiha',
+                            'Uzumaki Akachupi',
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(color: Colors.white, fontSize: 23),

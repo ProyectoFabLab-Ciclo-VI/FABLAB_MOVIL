@@ -26,8 +26,7 @@ dependencies:
   # Inyección de dependencias
   get_it: ^8.0.0
 
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
+ 
   cupertino_icons: ^1.0.8
   feather_icons: ^1.2.0
   google_fonts: ^6.2.1
@@ -45,4 +44,7 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/imgs/
+    - assets/images/esauprime.png
+    - assets/images/logogrande.png
+    - assets/images/logoblanco.png
+     

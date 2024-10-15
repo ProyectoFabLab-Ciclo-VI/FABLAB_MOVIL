@@ -1,5 +1,6 @@
 import 'package:fab_lab_upeu/di.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/login.dart';
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/menu.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: const Login());
+    return MaterialApp(
+        debugShowCheckedModeBanner: false, home: const PrincipalMenu());
   }
 }

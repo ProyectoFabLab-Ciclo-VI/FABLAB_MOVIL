@@ -37,7 +37,7 @@ class LoginRegisterToggleState extends State<LoginRegisterToggle> {
                 child: Text(
                   'Log in',
                   style: TextStyle(
-                    color: _selectedIndex == 0 ? Colors.white : Colors.grey,
+                    color: _selectedIndex == 0 ? Colors.white : Colors.black,
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
                   ),
@@ -62,7 +62,7 @@ class LoginRegisterToggleState extends State<LoginRegisterToggle> {
                 child: Text(
                   'Register',
                   style: TextStyle(
-                    color: _selectedIndex == 1 ? Colors.white : Colors.blue,
+                    color: _selectedIndex == 1 ? Colors.white : Colors.black,
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
                   ),

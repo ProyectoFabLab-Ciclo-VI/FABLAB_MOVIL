@@ -1,6 +1,7 @@
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/widgets/appbar.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/widgets/menu_drawer.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/widgets/navbarinferior.dart';
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/widgets/principal/inferiorprincipal.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/widgets/principal/superiorprincipal.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,14 @@ class PrincipalMenu extends StatelessWidget {
       appBar: APPBARGENERAL(),
       body: Column(
         children: [
-          MenuSuperior(),
+          const MenuSuperior(), // Widget que ocupa solo su altura
+          const SizedBox(height: 16), // Separador entre widgets
+          const Text("Parte de Busqueda :v"),
+          const SizedBox(height: 16), // Separador entre widgets
+          // Expande InferiorPrincipal para ocupar el resto del espacio disponible
+          Expanded(
+            child: InferiorPrincipal(),
+          ),
         ],
       ),
       bottomNavigationBar: NAVBARINFERIOR(),

@@ -8,8 +8,7 @@ class MenuSuperior extends StatefulWidget {
 }
 
 class MenuSuperiorState extends State<MenuSuperior> {
-  final PageController _pageController =
-      PageController(viewportFraction: 0.5); // Ajusta el viewportFraction
+  final PageController _pageController = PageController(viewportFraction: 0.5);
   int _currentIndex = 0;
 
   @override
@@ -21,50 +20,45 @@ class MenuSuperiorState extends State<MenuSuperior> {
           controller: _pageController,
           onPageChanged: (index) {
             setState(() {
-              _currentIndex = index; // Actualiza el índice actual
+              _currentIndex = index;
             });
           },
-          itemCount: 10, // Número de cards
+          itemCount: 10,
           itemBuilder: (context, index) {
             double scale = _currentIndex == index ? 1.2 : 0.9;
-            double cardWidth = 152; // Ancho fijo del card
-            double cardHeight = 150; // Altura fija del card
+            double cardWidth = 152;
+            double cardHeight = 150;
 
             return Center(
               child: Card(
-                margin: const EdgeInsets.symmetric(
-                    horizontal: 24), // Margen horizontal simétrico
-                elevation: 12, // Sombra del Card
+                margin: const EdgeInsets.symmetric(horizontal: 24),
+                elevation: 12,
                 shape: RoundedRectangleBorder(
-                  borderRadius:
-                      BorderRadius.circular(8), // Bordes curvados en el Card
+                  borderRadius: BorderRadius.circular(8),
                 ),
                 child: Container(
                   width: cardWidth,
-                  height:
-                      cardHeight * scale, // Ajusta la altura según la escala
+                  height: cardHeight * scale,
                   decoration: BoxDecoration(
-                    color: Colors.primaries[
-                        index % Colors.primaries.length], // Colores variados
+                    color: Colors.primaries[index % Colors.primaries.length],
                     borderRadius: BorderRadius.circular(8),
                     boxShadow: [
                       BoxShadow(
-                        color:
-                            Colors.black.withOpacity(0.3), // Color de la sombra
-                        spreadRadius: 2, // Radio de difusión de la sombra
-                        blurRadius: 8, // Radio de desenfoque de la sombra
-                        offset:
-                            const Offset(0, 1), // Desplazamiento de la sombra
+                        color: Colors.black.withOpacity(0.3),
+                        spreadRadius: 2,
+                        blurRadius: 8,
+                        offset: const Offset(0, 1),
                       ),
                     ],
-                    // Bordes curvados en el Container
                   ),
-                  alignment: Alignment.center,
-                  child: Transform.scale(
-                    scale: scale, // Aplica la escala solo al contenido
-                    child: Text(
-                      'Card ${index + 1}',
-                      style: const TextStyle(fontSize: 20),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8),
+                    child: Image.asset(
+                      'assets/images/cards_esau/esau${index + 1}.png', // Usa el índice para seleccionar la imagen
+                      fit: BoxFit
+                          .cover, // Ajusta la imagen para cubrir el contenedor
+                      width: cardWidth,
+                      height: cardHeight * scale,
                     ),
                   ),
                 ),

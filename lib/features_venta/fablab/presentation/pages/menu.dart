@@ -17,7 +17,7 @@ class PrincipalMenu extends StatelessWidget {
         children: [
           const MenuSuperior(), // Widget que ocupa solo su altura
           const SizedBox(height: 16), // Separador entre widgets
-          const Text("Parte de Busqueda :v"),
+          const Text("Multiverso Esaus"),
           const SizedBox(height: 16), // Separador entre widgets
           // Expande InferiorPrincipal para ocupar el resto del espacio disponible
           Expanded(

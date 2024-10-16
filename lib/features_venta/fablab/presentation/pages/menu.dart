@@ -13,17 +13,19 @@ class PrincipalMenu extends StatelessWidget {
     return Scaffold(
       drawer: Menudrawer(),
       appBar: APPBARGENERAL(),
-      body: Column(
-        children: [
-          const MenuSuperior(), // Widget que ocupa solo su altura
-          const SizedBox(height: 16), // Separador entre widgets
-          const Text("Multiverso Esaus"),
-          const SizedBox(height: 16), // Separador entre widgets
-          // Expande InferiorPrincipal para ocupar el resto del espacio disponible
-          Expanded(
-            child: InferiorPrincipal(),
-          ),
-        ],
+      body: SafeArea(
+        child: Column(
+          children: [
+            const MenuSuperior(), // Widget que ocupa solo su altura
+            const SizedBox(height: 16), // Separador entre widgets
+            const Text("Multiverso Esaus"),
+            const SizedBox(height: 16), // Separador entre widgets
+            // Expande InferiorPrincipal para ocupar el resto del espacio disponible
+            Expanded(
+              child: InferiorPrincipal(),
+            ),
+          ],
+        ),
       ),
       bottomNavigationBar: NAVBARINFERIOR(),
     );

@@ -1,10 +1,11 @@
-
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/bloc/search_pokemon/search_pokemon_bloc.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/widgets/pokemon_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+/// Pantalla principal para mostrar y gestionar Pokémon.
 class PokemonsScreen extends StatelessWidget {
+  /// Crea una nueva instancia de [PokemonsScreen].
   const PokemonsScreen({super.key});
 
   @override
@@ -22,15 +23,15 @@ class PokemonsScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     TextButton(
-                        onPressed: () =>
-                            BlocProvider.of<SearchPokemonBloc>(context)
-                                .add(OnSearchPokemon()),
-                        child: const Text('Generar pokemon aleatorio')),
+                      onPressed: () => BlocProvider.of<SearchPokemonBloc>(context)
+                          .add(OnSearchPokemon()),
+                      child: const Text('Generar pokemon aleatorio'),
+                    ),
                     TextButton(
-                        onPressed: () =>
-                            BlocProvider.of<SearchPokemonBloc>(context)
-                                .add(OnGetCapturedPokemons()),
-                        child: const Text('Ver mis pokemones capturados'))
+                      onPressed: () => BlocProvider.of<SearchPokemonBloc>(context)
+                          .add(OnGetCapturedPokemons()),
+                      child: const Text('Ver mis pokemones capturados'),
+                    ),
                   ],
                 ),
               );
@@ -42,20 +43,20 @@ class PokemonsScreen extends StatelessWidget {
                   children: [
                     PokemonCard(pokemon: state.pokemon),
                     TextButton(
-                        onPressed: () =>
-                            BlocProvider.of<SearchPokemonBloc>(context)
-                                .add(OnSearchPokemon()),
-                        child: const Text('Generar otro pokemon aleatorio')),
+                      onPressed: () => BlocProvider.of<SearchPokemonBloc>(context)
+                          .add(OnSearchPokemon()),
+                      child: const Text('Generar otro pokemon aleatorio'),
+                    ),
                     TextButton(
-                        onPressed: () =>
-                            BlocProvider.of<SearchPokemonBloc>(context)
-                                .add(OnGetCapturedPokemons()),
-                        child: const Text('Ver mis pokemones capturados')),
+                      onPressed: () => BlocProvider.of<SearchPokemonBloc>(context)
+                          .add(OnGetCapturedPokemons()),
+                      child: const Text('Ver mis pokemones capturados'),
+                    ),
                     TextButton(
-                        onPressed: () =>
-                            BlocProvider.of<SearchPokemonBloc>(context)
-                                .add(OnCapturePokemon(pokemon: state.pokemon)),
-                        child: Text('Capturar a ${state.pokemon.name}'))
+                      onPressed: () => BlocProvider.of<SearchPokemonBloc>(context)
+                          .add(OnCapturePokemon(pokemon: state.pokemon)),
+                      child: Text('Capturar a ${state.pokemon.name}'),
+                    ),
                   ],
                 ),
               );
@@ -76,10 +77,10 @@ class PokemonsScreen extends StatelessWidget {
                       ),
                     ),
                     TextButton(
-                        onPressed: () =>
-                            BlocProvider.of<SearchPokemonBloc>(context)
-                                .add(OnSearchPokemon()),
-                        child: const Text('Volver y generar pokemon')),
+                      onPressed: () => BlocProvider.of<SearchPokemonBloc>(context)
+                          .add(OnSearchPokemon()),
+                      child: const Text('Volver y generar pokemon'),
+                    ),
                   ],
                 ),
               );
@@ -90,12 +91,12 @@ class PokemonsScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     const Text(
-                        'Ah ocurrido un error, que te parece si lo intentamos de nuevo?'),
+                        'Ha ocurrido un error, que te parece si lo intentamos de nuevo?'),
                     TextButton(
-                        onPressed: () =>
-                            BlocProvider.of<SearchPokemonBloc>(context)
-                                .add(OnSearchPokemon()),
-                        child: const Text('Volver y generar pokemon'))
+                      onPressed: () => BlocProvider.of<SearchPokemonBloc>(context)
+                          .add(OnSearchPokemon()),
+                      child: const Text('Volver y generar pokemon'),
+                    ),
                   ],
                 ),
               );

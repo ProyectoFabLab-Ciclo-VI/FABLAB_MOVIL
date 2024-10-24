@@ -10,7 +10,6 @@ class InferiorPrincipal extends StatelessWidget {
       itemCount: 10, // Número de Cards que deseas mostrar
       itemBuilder: (context, index) {
         String cardText;
-        // Usando if-else para determinar el texto
         if (index == 0) {
           cardText = "Esau de Mewing";
         } else if (index == 1) {
@@ -45,16 +44,15 @@ class InferiorPrincipal extends StatelessWidget {
               child: Column(
                 children: [
                   Image.asset(
-                    'assets/images/cards_esau/esau${index + 1}.png', // Usa el índice para seleccionar la imagen
-                    fit: BoxFit
-                        .cover, // Ajusta la imagen para cubrir el ancho del Card
+                    'assets/images/cards_esau/esau${index + 1}.png',
+                    fit: BoxFit.cover,
                     height: 150, // Ajusta la altura de la imagen
                     width: double
                         .infinity, // Asegura que la imagen ocupe todo el ancho del Card
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    cardText, // Muestra el texto correspondiente
+                    cardText,
                     style: const TextStyle(fontSize: 20),
                   ),
                   const SizedBox(height: 8),

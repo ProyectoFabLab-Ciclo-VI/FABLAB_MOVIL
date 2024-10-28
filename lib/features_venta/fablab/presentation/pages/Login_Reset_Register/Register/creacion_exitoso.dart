@@ -11,19 +11,17 @@ class CreacionExitoso extends StatelessWidget {
     return Scaffold(
       backgroundColor: coloresPersonalizados[0],
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(30),
+        child: Center(
+          child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(height: 20),
                 Image.asset('assets/images/Icon-header.png'),
-                const SizedBox(height: 30),
+                const SizedBox(height: 100),
                 Icon(Icons.check_circle,
                     size: 100, color: coloresPersonalizados[2]),
                 Text(
-                  "Exitoso",
+                  "Exitososss",
                   style: TextStyle(
                     fontSize: 40,
                     color: coloresPersonalizados[5],

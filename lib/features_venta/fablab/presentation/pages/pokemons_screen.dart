@@ -1,5 +1,5 @@
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/bloc/search_pokemon/search_pokemon_bloc.dart';
-import 'package:fab_lab_upeu/features_venta/fablab/presentation/widgets/pokemon_card.dart';
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/widgets/Otros_hastaponerleunnombre/pokemon_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

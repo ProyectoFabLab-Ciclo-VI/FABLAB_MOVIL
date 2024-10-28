@@ -1,31 +1,31 @@
+import 'package:fab_lab_upeu/shared/colores.dart';
 import 'package:flutter/material.dart';
 
 @immutable
-class EmailInput extends StatelessWidget {
+class EmailVerificacion extends StatelessWidget {
   final TextEditingController controller;
-  final String hintText;
 
-  const EmailInput({
+  const EmailVerificacion({
     super.key,
     required this.controller,
-    required this.hintText,
   });
 
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-      constraints: BoxConstraints(maxHeight: 40),
+      constraints: BoxConstraints(
+        maxWidth: 52, // Ancho fijo del cuadro
+        maxHeight: 52, // Altura fija del cuadro
+      ),
       child: TextField(
         controller: controller,
         decoration: InputDecoration(
-          contentPadding: EdgeInsets.symmetric(vertical: 12, horizontal: 12),
-          hintText: hintText,
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.black),
+            borderSide: BorderSide(color: coloresPersonalizados[5]),
             borderRadius: BorderRadius.all(Radius.circular(8)),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.black),
+            borderSide: BorderSide(color: coloresPersonalizados[5]),
             borderRadius: BorderRadius.all(Radius.circular(8)),
           ),
         ),

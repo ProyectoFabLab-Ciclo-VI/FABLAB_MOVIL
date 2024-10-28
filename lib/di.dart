@@ -4,7 +4,7 @@ import 'package:fab_lab_upeu/features_venta/fablab/data/datasources/pokemon_remo
 import 'package:fab_lab_upeu/features_venta/fablab/data/repositories/pokemon_repository_impl.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/domain/repositories/pokemon_repository.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/domain/use_cases/capture_pokemon.dart';
-import 'package:fab_lab_upeu/features_venta/fablab/domain/use_cases/getAllPokemon.dart';
+import 'package:fab_lab_upeu/features_venta/fablab/domain/use_cases/get_all_pokemon.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/domain/use_cases/search_pokemon.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/bloc/search_pokemon/search_pokemon_bloc.dart';
 import 'package:get_it/get_it.dart';

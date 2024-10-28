@@ -1,4 +1,4 @@
-import 'package:fab_lab_upeu/features_venta/fablab/presentation/widgets/cuadrolargo.dart';
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/widgets/Otros_hastaponerleunnombre/cuadrolargo.dart';
 import 'package:flutter/material.dart';
 
 class Menudrawer extends StatelessWidget {

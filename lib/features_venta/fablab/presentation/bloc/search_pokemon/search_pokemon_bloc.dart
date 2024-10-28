@@ -1,7 +1,7 @@
 import 'package:fab_lab_upeu/core/error/failures.dart';
 import 'package:fab_lab_upeu/core/utils/utils.dart' as utils;
 import 'package:fab_lab_upeu/features_venta/fablab/domain/use_cases/capture_pokemon.dart';
-import 'package:fab_lab_upeu/features_venta/fablab/domain/use_cases/getAllPokemon.dart';
+import 'package:fab_lab_upeu/features_venta/fablab/domain/use_cases/get_all_pokemon.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/domain/use_cases/search_pokemon.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/domain/entities/pokemon.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

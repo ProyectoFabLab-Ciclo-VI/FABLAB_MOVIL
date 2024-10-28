@@ -33,6 +33,9 @@ dependencies:
   carousel_slider: ^5.0.0
   flutter_svg: ^2.0.7
   flutter_bloc: ^8.1.6
+  provider: ^6.1.2
+  bloc: ^8.1.4
+  meta: ^1.15.0
 
 dev_dependencies:
   flutter_test:
@@ -57,5 +60,6 @@ flutter:
     - assets/images/cards_esau/esau8.png
     - assets/images/cards_esau/esau9.png
     - assets/images/cards_esau/esau10.png
+    - assets/images/Icon-header.png
     
      

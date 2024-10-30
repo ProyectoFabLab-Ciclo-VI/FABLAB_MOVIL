@@ -1,5 +1,5 @@
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Login_Reset_Register/Reset/reset_password.dart';
-import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/menu.dart';
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Home/home.dart';
 import 'package:fab_lab_upeu/shared/presentation/widgetsGlobal/BotonesGeneral/boton_grande.dart';
 import 'package:fab_lab_upeu/shared/presentation/widgetsGlobal/inputs/inputs_movil_email.dart';
 import 'package:fab_lab_upeu/shared/colores.dart';

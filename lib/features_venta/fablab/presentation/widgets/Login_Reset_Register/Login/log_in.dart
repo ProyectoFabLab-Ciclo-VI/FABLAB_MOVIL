@@ -3,6 +3,7 @@ import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Home/home.
 import 'package:fab_lab_upeu/shared/presentation/widgetsGlobal/BotonesGeneral/boton_grande.dart';
 import 'package:fab_lab_upeu/shared/presentation/widgetsGlobal/inputs/inputs_movil_email.dart';
 import 'package:fab_lab_upeu/shared/colores.dart';
+import 'package:fab_lab_upeu/shared/textos.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatelessWidget {
@@ -38,14 +39,10 @@ class Login extends StatelessWidget {
             );
           },
           child: Align(
-            alignment: Alignment.centerRight, // Alinea el texto a la derecha
-            child: Text(
-              '¿Olvidaste tu contraseña?',
-              style: TextStyle(
-                color: coloresPersonalizados[3],
-              ), // Ajusta el estilo según sea necesario
-            ),
-          ),
+              alignment: Alignment.centerRight, // Alinea el texto a la derecha
+              child: textoRegularBlanco(
+                '¿Olvidaste tu contraseña?',
+              )),
         ),
         const SizedBox(height: 50),
         LargeButton(

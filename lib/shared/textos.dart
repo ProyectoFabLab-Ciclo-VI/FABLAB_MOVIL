@@ -1,36 +1,37 @@
+import 'package:fab_lab_upeu/shared/colores.dart';
 import 'package:flutter/material.dart';
 
 Text textosNormales(String cuerpo) {
   return Text(
     cuerpo,
-    style: TextStyle(fontSize: 16, color: Colors.black),
+    style: TextStyle(fontSize: 16, color: coloresPersonalizados[4]),
   );
 }
 
 Text headers1(String cuerpo) {
   return Text(
     cuerpo,
-    style: TextStyle(fontSize: 40, color: Colors.black),
+    style: TextStyle(fontSize: 40, color: coloresPersonalizados[4]),
   );
 }
 
 Text textoRegularBlanco(String cuerpo) {
   return Text(
     cuerpo,
-    style: TextStyle(fontSize: 14, color: Colors.white),
+    style: TextStyle(fontSize: 14, color: coloresPersonalizados[3]),
   );
 }
 
 Text textoRegularNegro(String cuerpo) {
   return Text(
     cuerpo,
-    style: TextStyle(fontSize: 14, color: Colors.black),
+    style: TextStyle(fontSize: 14, color: coloresPersonalizados[4]),
   );
 }
 
 Text headers2(String cuerpo) {
   return Text(
     cuerpo,
-    style: TextStyle(fontSize: 20, color: Colors.black),
+    style: TextStyle(fontSize: 20, color: coloresPersonalizados[4]),
   );
 }

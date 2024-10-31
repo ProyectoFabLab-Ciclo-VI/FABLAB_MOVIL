@@ -2,6 +2,7 @@ import 'package:fab_lab_upeu/features_venta/fablab/presentation/widgets/Otros_ha
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/widgets/Otros_hastaponerleunnombre/menu_drawer.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/widgets/Otros_hastaponerleunnombre/navbarinferior.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/widgets/principal/inferiorprincipal.dart';
+import 'package:fab_lab_upeu/shared/presentation/widgetsGlobal/Busqueda/busqueda_card.dart';
 import 'package:flutter/material.dart';
 
 class PrincipalMenu extends StatelessWidget {
@@ -16,11 +17,12 @@ class PrincipalMenu extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 16),
-            const Text("Multiverso Esaus"), // Sección de búsqueda
+            Busqueda(), // Sección de búsqueda
             const SizedBox(height: 16),
-            Expanded( // Se asegura de que ocupe todo el espacio disponible
-              child: InferiorPrincipal(),
-            ),
+            Expanded(
+                // Se asegura de que ocupe todo el espacio disponible
+
+                child: InferiorPrincipal()),
           ],
         ),
       ),

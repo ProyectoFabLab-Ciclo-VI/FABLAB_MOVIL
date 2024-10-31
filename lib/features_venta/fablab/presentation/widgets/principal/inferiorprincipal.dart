@@ -1,3 +1,4 @@
+import 'package:fab_lab_upeu/shared/presentation/widgetsGlobal/cards/card_menu_principal.dart';
 import 'package:flutter/material.dart';
 
 class InferiorPrincipal extends StatelessWidget {
@@ -5,61 +6,42 @@ class InferiorPrincipal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return GridView.builder(
       padding: const EdgeInsets.all(16.0),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2, // Número de columnas
+        crossAxisSpacing: 16.0, // Espacio horizontal entre las columnas
+        mainAxisSpacing: 16.0, // Espacio vertical entre las filas
+        childAspectRatio: 0.75, // Relación de aspecto de los hijos (ancho/alto)
+      ),
       itemCount: 10, // Número de Cards que deseas mostrar
       itemBuilder: (context, index) {
-        String cardText;
+        String cardiferent;
         if (index == 0) {
-          cardText = "Esau de Mewing";
+          cardiferent = "Esau de Mewing";
         } else if (index == 1) {
-          cardText = "Esau Europeo";
+          cardiferent = "Esau Europeo";
         } else if (index == 2) {
-          cardText = "Esau sin peinarse";
+          cardiferent = "Esau sin peinarse";
         } else if (index == 3) {
-          cardText = "Esau challenger";
+          cardiferent = "Esau challenger";
         } else if (index == 4) {
-          cardText = "Esau Terrorista";
+          cardiferent = "Esau Terrorista";
         } else if (index == 5) {
-          cardText = "Esau Bad Boy";
+          cardiferent = "Esau Bad Boy";
         } else if (index == 6) {
-          cardText = "Esau Exponente";
+          cardiferent = "Esau Exponente";
         } else if (index == 7) {
-          cardText = "Esau Boxeador";
+          cardiferent = "Esau Boxeador";
         } else if (index == 8) {
-          cardText = "Esau Bugeado";
+          cardiferent = "Esau Bugeado";
         } else {
-          cardText = "Esau Practicante de wilsom";
+          cardiferent = "Esau Practicante de wilsom";
         }
 
-        return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10.0),
-          child: Card(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
-            ),
-            elevation: 4,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: Column(
-                children: [
-                  Image.asset(
-                    'assets/images/cards_esau/esau${index + 1}.png',
-                    fit: BoxFit.cover,
-                    height: 150, // Ajusta la altura de la imagen
-                    width: double
-                        .infinity, // Asegura que la imagen ocupe todo el ancho del Card
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    cardText,
-                    style: const TextStyle(fontSize: 20),
-                  ),
-                  const SizedBox(height: 8),
-                ],
-              ),
-            ),
-          ),
+        return CardsGlobal(
+          cardUrl: 'assets/images/cards_esau/esau${index + 1}.png',
+          cardText: cardiferent,
         );
       },
     );

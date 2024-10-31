@@ -1,3 +1,4 @@
+import 'package:fab_lab_upeu/shared/colores.dart';
 import 'package:flutter/material.dart';
 
 class NAVBARINFERIOR extends StatelessWidget {
@@ -6,23 +7,34 @@ class NAVBARINFERIOR extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      backgroundColor: const Color(0xFF122545),
+      backgroundColor: coloresPersonalizados[1],
+      type: BottomNavigationBarType.fixed,
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
-          label: 'Inicio',
+          label: '', // Oculta el label
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.shopping_cart),
-          label: 'Comprar',
+          label: '',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.description),
+          label: '',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.notifications),
+          label: '',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.settings),
-          label: 'settings',
+          label: '',
         ),
       ],
       selectedItemColor: Colors.green,
-      unselectedItemColor: Colors.grey,
+      unselectedItemColor: coloresPersonalizados[3],
+      showSelectedLabels: false, // Oculta los labels seleccionados
+      showUnselectedLabels: false,
     );
   }
 }

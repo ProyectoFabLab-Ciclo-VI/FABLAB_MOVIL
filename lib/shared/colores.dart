@@ -8,6 +8,7 @@ const List<Color> coloresPersonalizados = [
   //
   Color(0xFFFFFFFF), //3
   Color(0xFF000000), // 4
+  Color(0xFFB4BCC8), //5
   Colors.transparent,
   // 6
   // Puedes agregar más colores personalizados aquí

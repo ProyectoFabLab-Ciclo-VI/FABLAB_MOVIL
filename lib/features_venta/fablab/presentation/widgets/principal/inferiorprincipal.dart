@@ -14,7 +14,7 @@ class InferiorPrincipal extends StatelessWidget {
         mainAxisSpacing: 16.0, // Espacio vertical entre las filas
         childAspectRatio: 0.75, // Relación de aspecto de los hijos (ancho/alto)
       ),
-      itemCount: 10, // Número de Cards que deseas mostrar
+      itemCount: 6, // Número de Cards que deseas mostrar
       itemBuilder: (context, index) {
         String cardiferent;
         if (index == 0) {
@@ -29,19 +29,14 @@ class InferiorPrincipal extends StatelessWidget {
           cardiferent = "Esau Terrorista";
         } else if (index == 5) {
           cardiferent = "Esau Bad Boy";
-        } else if (index == 6) {
-          cardiferent = "Esau Exponente";
-        } else if (index == 7) {
-          cardiferent = "Esau Boxeador";
-        } else if (index == 8) {
-          cardiferent = "Esau Bugeado";
         } else {
-          cardiferent = "Esau Practicante de wilsom";
+          cardiferent = "Esau Exponente";
         }
 
         return CardsGlobal(
-          cardUrl: 'assets/images/cards_esau/esau${index + 1}.png',
+          cardUrl: 'assets/images/menu/foto${index + 1}.png',
           cardText: cardiferent,
+          
         );
       },
     );

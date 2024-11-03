@@ -1,3 +1,4 @@
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Home/Compra/pago_producto.dart';
 import 'package:fab_lab_upeu/shared/colores.dart';
 import 'package:fab_lab_upeu/shared/presentation/widgetsGlobal/BotonesGeneral/boton_grande.dart';
 import 'package:fab_lab_upeu/shared/textos.dart';
@@ -57,7 +58,12 @@ class Descripcioncompra extends StatelessWidget {
                       Center(
                         child: LargeButton(
                             texto: 'Comprar',
-                            onPressed: () => {},
+                            onPressed: () => {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (contex) => Pago()))
+                                },
                             indiceColorFondo: 0,
                             indiceColorTexto: 3),
                       )

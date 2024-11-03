@@ -36,6 +36,7 @@ dependencies:
   provider: ^6.1.2
   bloc: ^8.1.4
   meta: ^1.15.0
+  flutter_dash: ^1.0.0
 
 dev_dependencies:
   flutter_test:
@@ -67,5 +68,6 @@ flutter:
     - assets/images/menu/foto4.png
     - assets/images/menu/foto5.png
     - assets/images/menu/foto6.png
+    - assets/images/menu/pago.png
     
      

@@ -37,30 +37,21 @@ dependencies:
   bloc: ^8.1.4
   meta: ^1.15.0
   flutter_dash: ^1.0.0
+  sizer: ^3.0.3
+  flutter_form_builder: ^9.5.0
+  form_builder_validators: ^11.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^5.0.0
+  flutter_lints: ^4.0.0
 
 flutter:
   uses-material-design: true
 
   assets:
-    - assets/images/esauprime.png
-    - assets/images/logogrande.png
     - assets/images/logoblanco.png
-    - assets/images/cards_esau/esau1.png
-    - assets/images/cards_esau/esau2.png
-    - assets/images/cards_esau/esau3.png
-    - assets/images/cards_esau/esau4.png
-    - assets/images/cards_esau/esau5.png
-    - assets/images/cards_esau/esau6.png
-    - assets/images/cards_esau/esau7.png
-    - assets/images/cards_esau/esau8.png
-    - assets/images/cards_esau/esau9.png
-    - assets/images/cards_esau/esau10.png
     - assets/images/Icon-header.png
     - assets/images/menu/foto1.png
     - assets/images/menu/foto2.png

@@ -1,8 +1,9 @@
 import 'package:fab_lab_upeu/di.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/bloc/Login_Reset_Register/login_register_controller.dart';
-import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Login_Reset_Register/Login/login_second.dart';
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/TutorialLogin/login_tutorial.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
 
 void main() async {
   await init();
@@ -19,9 +20,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: const LoginLast(),
+    return Sizer(
+      builder: (context, orientation, deviceType) {
+        return const MaterialApp(
+          debugShowCheckedModeBanner: false,
+          home: LoginPage(),
+        );
+      },
     );
   }
 }

@@ -13,7 +13,7 @@ class EmailVerificacion extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-      constraints: BoxConstraints(
+      constraints: const BoxConstraints(
         maxWidth: 52, // Ancho fijo del cuadro
         maxHeight: 52, // Altura fija del cuadro
       ),
@@ -22,11 +22,11 @@ class EmailVerificacion extends StatelessWidget {
         decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: coloresPersonalizados[5]),
-            borderRadius: BorderRadius.all(Radius.circular(8)),
+            borderRadius: const BorderRadius.all(Radius.circular(8)),
           ),
           focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(color: coloresPersonalizados[5]),
-            borderRadius: BorderRadius.all(Radius.circular(8)),
+            borderRadius: const BorderRadius.all(Radius.circular(8)),
           ),
         ),
       ),

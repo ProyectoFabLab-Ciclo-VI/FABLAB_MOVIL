@@ -9,7 +9,7 @@ class CuadroLargo extends StatelessWidget {
     return Column(
       children: [
         Card(
-          color: Color(0xFF0D1B31),
+          color: const Color(0xFF0D1B31),
           elevation: 5,
           child: SizedBox(
             width: 250,
@@ -17,7 +17,7 @@ class CuadroLargo extends StatelessWidget {
             child: Center(
               child: Text(
                 texto,
-                style: TextStyle(fontSize: 16, color: Color(0xFFFFFFFF)),
+                style: const TextStyle(fontSize: 16, color: Color(0xFFFFFFFF)),
               ),
             ),
           ),

@@ -1,8 +1,11 @@
-import 'package:fab_lab_upeu/features_venta/fablab/presentation/widgets/TutorialLoginWidgets/form_builder.dart';
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/bloc/Login_Reset_Register/login_register.dart';
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/bloc/Login_Reset_Register/login_register_controller.dart';
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Login_Reset_Register/Register/register.dart';
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/TutorialLogin/ingreso.dart';
 import 'package:fab_lab_upeu/shared/colores.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
-import 'package:form_builder_validators/form_builder_validators.dart';
+import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
 class LoginPage extends StatefulWidget {
@@ -34,68 +37,17 @@ class _LoginPageState extends State<LoginPage> {
                       child: Image.asset('assets/images/logoblanco.png'),
                     ),
                     SizedBox(
-                      height: 50.sp, // usando sizer
+                      height: 25.sp,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: FormBuilderCustom(
-                        name: 'email',
-                        obscureText: false,
-                        hintText: 'Username',
-                        icon: Icons.person,
-                        validator: FormBuilderValidators.compose([
-                          FormBuilderValidators.required(
-                            errorText: 'Campo requerido',
-                          ),
-                          FormBuilderValidators.email(
-                            errorText: 'Correo no valido',
-                          )
-                        ]),
-                        keyType: TextInputType.emailAddress,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: FormBuilderCustom(
-                        name: 'password',
-                        obscureText: true,
-                        hintText: 'Password',
-                        icon: Icons.remove_red_eye_sharp,
-                        validator: FormBuilderValidators.compose([
-                          FormBuilderValidators.required(
-                            errorText: 'Password requerido',
-                          ),
-                          FormBuilderValidators.minLength(4,
-                              errorText: 'Minimo 4 caracteres'),
-                          FormBuilderValidators.maxLength(7,
-                              errorText: 'Maximo 7 caracteres'),
-                        ]),
-                        keyType: TextInputType.text,
-                      ),
-                    ),
-                    SizedBox(
-                      height: size.height * 0.2, // usando mediaquery
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        print("Botón presionado");
-                        _formkey.currentState?.save();
-                        if (_formkey.currentState?.validate() == true) {
-                          final y = _formkey.currentState?.value;
-                          print("Email: ${y?['email']}");
-                          print("Password: ${y?['password']}");
-                        }
+                    const LoginRegisterToggle(),
+                    Consumer<LoginRegisterController>(
+                      builder: (context, controller, child) {
+                        return controller.selectedIndex == 0
+                            ? const Ingreso()
+                            : const Register();
                       },
-                      style: ElevatedButton.styleFrom(
-                        minimumSize: const Size(200, 50),
-                        backgroundColor: Color(Colors.white.value),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                      ),
-                      child: const Text('Iniciar Sesión',
-                          style: TextStyle(color: Colors.black)),
                     ),
+                   
                   ],
                 ),
               )),

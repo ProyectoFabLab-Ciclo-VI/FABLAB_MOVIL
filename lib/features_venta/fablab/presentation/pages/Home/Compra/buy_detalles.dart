@@ -45,12 +45,12 @@ class Descripcioncompra extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       headers1('Gato'),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       textoRegularNegro('1452DER45S'),
-                      SizedBox(height: 70),
+                      const SizedBox(height: 70),
                       textosNormales(
                           'Es un modelo 3D detallado que representa un gato místico con un aspecto adorable y un toque de misterio.'),
-                      SizedBox(height: 50),
+                      const SizedBox(height: 50),
                       Align(
                         alignment: Alignment.centerRight,
                         child: textoRegularNegro('Total: S/. 50.00'),
@@ -62,7 +62,7 @@ class Descripcioncompra extends StatelessWidget {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (contex) => Pago()))
+                                          builder: (contex) => const Pago()))
                                 },
                             indiceColorFondo: 0,
                             indiceColorTexto: 3),

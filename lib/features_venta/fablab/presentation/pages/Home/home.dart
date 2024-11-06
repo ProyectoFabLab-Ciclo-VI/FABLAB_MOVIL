@@ -10,15 +10,15 @@ class PrincipalMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       drawer: Menudrawer(),
       appBar: APPBARGENERAL(),
       body: SafeArea(
         child: Column(
           children: [
-            const SizedBox(height: 16),
+            SizedBox(height: 16),
             Busqueda(), // Sección de búsqueda
-            const SizedBox(height: 16),
+            SizedBox(height: 16),
             Expanded(
                 // Se asegura de que ocupe todo el espacio disponible
 

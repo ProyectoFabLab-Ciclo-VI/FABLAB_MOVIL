@@ -33,7 +33,7 @@ class Login extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => Resetpassword(),
+                builder: (context) => const Resetpassword(),
               ), // Navegar a la página de recuperación de contraseña
             );
           },
@@ -50,7 +50,7 @@ class Login extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => PrincipalMenu(),
+                builder: (context) => const PrincipalMenu(),
               ),
             );
           },

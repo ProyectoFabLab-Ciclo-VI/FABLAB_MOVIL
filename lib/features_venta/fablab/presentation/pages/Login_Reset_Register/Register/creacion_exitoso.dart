@@ -42,7 +42,7 @@ class CreacionExitoso extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => LoginLast(),
+                        builder: (context) => const LoginLast(),
                       ),
                     );
                   },

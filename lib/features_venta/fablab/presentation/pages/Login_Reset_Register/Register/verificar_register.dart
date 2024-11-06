@@ -22,7 +22,7 @@ class VerificarRegister extends StatelessWidget {
                     alignment: Alignment.centerLeft,
                     child: IconButton(
                       onPressed: () => Navigator.pop(context),
-                      icon: Icon(Icons.keyboard_double_arrow_left_rounded),
+                      icon: const Icon(Icons.keyboard_double_arrow_left_rounded),
                       iconSize: 50,
                       color: coloresPersonalizados[5],
                     ),
@@ -73,7 +73,7 @@ class VerificarRegister extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => CreacionExitoso()))
+                                    builder: (context) => const CreacionExitoso()))
                           },
                       indiceColorFondo: 1,
                       indiceColorTexto: 3),

@@ -12,7 +12,7 @@ class Busqueda extends StatelessWidget {
           color: Colors.grey[200], // Color de fondo
           borderRadius: BorderRadius.circular(20), // Borde redondeado
         ),
-        child: TextField(
+        child: const TextField(
           decoration: InputDecoration(
             hintText: 'Buscar', // Texto de pista
             prefixIcon: Icon(Icons.search), // Icono de búsqueda

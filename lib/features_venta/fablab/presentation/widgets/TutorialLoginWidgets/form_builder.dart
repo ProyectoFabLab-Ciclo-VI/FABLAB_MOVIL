@@ -31,17 +31,17 @@ class FormBuilderCustom extends StatelessWidget {
         errorStyle: const TextStyle(color: Colors.red, fontSize: 11),
         hintText: hintText,
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.blueGrey, width: 2),
+          borderSide: const BorderSide(color: Colors.blueGrey, width: 2),
           borderRadius: BorderRadius.circular(12),
         ),
         hintStyle: const TextStyle(color: Colors.deepPurple),
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(
-              color: const Color.fromARGB(255, 32, 20, 53), width: 2),
+          borderSide: const BorderSide(
+              color: Color.fromARGB(255, 32, 20, 53), width: 2),
           borderRadius: BorderRadius.circular(12),
         ),
         border: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.deepPurple, width: 2),
+          borderSide: const BorderSide(color: Colors.deepPurple, width: 2),
           borderRadius: BorderRadius.circular(12),
         ),
         suffixIcon: Icon(icon, color: Colors.deepPurple),

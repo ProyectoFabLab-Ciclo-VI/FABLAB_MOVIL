@@ -22,7 +22,7 @@ class Verificar extends StatelessWidget {
                     alignment: Alignment.centerLeft,
                     child: IconButton(
                       onPressed: () => Navigator.pop(context),
-                      icon: Icon(Icons.keyboard_double_arrow_left_rounded),
+                      icon: const Icon(Icons.keyboard_double_arrow_left_rounded),
                       iconSize: 50,
                       color: coloresPersonalizados[5],
                     ),
@@ -74,7 +74,7 @@ class Verificar extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        Restablecerpassword()))
+                                        const Restablecerpassword()))
                           },
                       indiceColorFondo: 1,
                       indiceColorTexto: 3),

@@ -22,7 +22,7 @@ class Resetpassword extends StatelessWidget {
                   alignment: Alignment.centerLeft,
                   child: IconButton(
                     onPressed: () => Navigator.pop(context),
-                    icon: Icon(Icons.keyboard_double_arrow_left_rounded),
+                    icon: const Icon(Icons.keyboard_double_arrow_left_rounded),
                     iconSize: 50,
                     color: coloresPersonalizados[5],
                   ),
@@ -71,7 +71,7 @@ class Resetpassword extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => Verificar(),
+                        builder: (context) => const Verificar(),
                       ),
                     );
                   },

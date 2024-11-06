@@ -27,7 +27,7 @@ class LoginLast extends StatelessWidget {
                 const SizedBox(height: 40),
                 Consumer<LoginRegisterController>(
                   builder: (context, controller, child) {
-                    return controller.selectedIndex == 0 ? Login() : Register();
+                    return controller.selectedIndex == 0 ? const Login() : const Register();
                   },
                 ),
               ],

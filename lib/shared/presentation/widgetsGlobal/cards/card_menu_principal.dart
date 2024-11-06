@@ -11,7 +11,7 @@ class CardsGlobal extends StatelessWidget {
     return GestureDetector(
       onTap: () => {
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => Descripcioncompra()))
+            MaterialPageRoute(builder: (context) => const Descripcioncompra()))
       },
       child: Card(
         shape: RoundedRectangleBorder(

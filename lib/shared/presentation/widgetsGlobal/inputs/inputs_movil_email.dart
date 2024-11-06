@@ -29,16 +29,16 @@ class EmailInput extends StatelessWidget {
         controller: controller,
         obscureText: obscureText,
         decoration: InputDecoration(
-          contentPadding: EdgeInsets.symmetric(vertical: 12, horizontal: 12),
+          contentPadding: const EdgeInsets.symmetric(vertical: 12, horizontal: 12),
           hintText: hintText,
           hintStyle: TextStyle(color: coloresPersonalizados[3]),
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: coloresPersonalizados[3]),
-            borderRadius: BorderRadius.all(Radius.circular(8)),
+            borderRadius: const BorderRadius.all(Radius.circular(8)),
           ),
           focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(color: coloresPersonalizados[3]),
-            borderRadius: BorderRadius.all(Radius.circular(8)),
+            borderRadius: const BorderRadius.all(Radius.circular(8)),
           ),
         ),
         style: TextStyle(

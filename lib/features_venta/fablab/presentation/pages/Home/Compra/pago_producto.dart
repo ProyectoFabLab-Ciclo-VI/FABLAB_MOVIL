@@ -24,15 +24,15 @@ class Pago extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               textoRegularNegro('N° a yapear: 982431433'),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               headers1('S/20'),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Image.asset('assets/images/menu/pago.png'),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Container(
@@ -46,7 +46,7 @@ class Pago extends StatelessWidget {
                         color: Colors.black.withOpacity(0.1),
                         spreadRadius: 2,
                         blurRadius: 7,
-                        offset: Offset(0, 3),
+                        offset: const Offset(0, 3),
                       )
                     ],
                   ),

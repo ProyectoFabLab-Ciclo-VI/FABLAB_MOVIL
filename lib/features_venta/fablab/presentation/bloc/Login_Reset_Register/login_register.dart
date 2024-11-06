@@ -16,7 +16,7 @@ class LoginRegisterToggle extends StatelessWidget {
         return Padding(
           padding: const EdgeInsets.all(8.0),
           child: Container(
-            height: 6.5.h,
+            height: 7.5.h,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

@@ -2,20 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 
 class FormBuilderCustom extends StatelessWidget {
-  const FormBuilderCustom(
-      {super.key,
-      required this.name,
-      required this.obscureText,
-      required this.hintText,
-      this.validator,
-      required this.icon,
-      required this.keyType});
+  const FormBuilderCustom({
+    super.key,
+    required this.name,
+    required this.obscureText,
+    required this.hintText,
+    this.validator,
+    this.icon, // Icono opcional
+    required this.keyType,
+  });
 
   final String name;
   final bool obscureText;
   final String hintText;
   final String? Function(String?)? validator;
-  final IconData icon;
+  final IconData? icon; // Puede ser null
   final TextInputType keyType;
 
   @override
@@ -44,7 +45,9 @@ class FormBuilderCustom extends StatelessWidget {
           borderSide: const BorderSide(color: Colors.deepPurple, width: 2),
           borderRadius: BorderRadius.circular(12),
         ),
-        suffixIcon: Icon(icon, color: Colors.deepPurple),
+        suffixIcon: icon != null
+            ? Icon(icon, color: Colors.deepPurple)
+            : null, // Muestra icono solo si no es null
         fillColor: Colors.white,
         filled: true,
       ),

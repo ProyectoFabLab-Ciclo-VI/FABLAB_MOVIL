@@ -22,35 +22,37 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+
     return Scaffold(
       backgroundColor: coloresPersonalizados[1],
       body: SafeArea(
         child: SingleChildScrollView(
           child: FormBuilder(
-              key: _formkey,
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      height: 30.h,
-                      child: Image.asset('assets/images/logoblanco.png'),
-                    ),
-                    SizedBox(
-                      height: 25.sp,
-                    ),
-                    const LoginRegisterToggle(),
-                    Consumer<LoginRegisterController>(
-                      builder: (context, controller, child) {
-                        return controller.selectedIndex == 0
-                            ? const Ingreso()
-                            : const Register();
-                      },
-                    ),
-                   
-                  ],
-                ),
-              )),
+            key: _formkey,
+            child: Consumer<LoginRegisterController>(
+              builder: (context, controller, child) {
+                return Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      // Condicional para mostrar/ocultar la imagen
+                      if (controller.selectedIndex == 0)
+                        SizedBox(
+                          height: 30.h,
+                          child: Image.asset('assets/images/logoblanco.png'),
+                        ),
+                      SizedBox(height: 25.sp),
+                      const LoginRegisterToggle(),
+                      // Muestra el widget de Ingreso o Register según el estado
+                      controller.selectedIndex == 0
+                          ? const Ingreso()
+                          : const Register(),
+                    ],
+                  ),
+                );
+              },
+            ),
+          ),
         ),
       ),
     );

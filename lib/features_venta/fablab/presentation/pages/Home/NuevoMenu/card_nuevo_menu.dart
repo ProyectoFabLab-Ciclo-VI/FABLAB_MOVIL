@@ -35,7 +35,7 @@ class CardMenuNuevo extends StatelessWidget {
                 ),
                 child: Image.asset(
                   data['imagePath'] ?? '',
-                  fit: BoxFit.cover,
+                  fit: BoxFit.contain,
                 ),
               ),
               Expanded(

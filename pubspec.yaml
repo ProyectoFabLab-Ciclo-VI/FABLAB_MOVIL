@@ -12,7 +12,6 @@ dependencies:
   flutter:
     sdk: flutter
 
-    
   # Cliente HTTP
   dio: ^5.4.3
 
@@ -26,7 +25,6 @@ dependencies:
   # Inyección de dependencias
   get_it: ^8.0.0
 
- 
   cupertino_icons: ^1.0.8
   feather_icons: ^1.2.0
   google_fonts: ^6.2.1
@@ -60,5 +58,24 @@ flutter:
     - assets/images/menu/foto5.png
     - assets/images/menu/foto6.png
     - assets/images/menu/pago.png
-    
-     
+    - assets/images/menu/katana.png
+    - assets/images/logo-azul.png
+
+  fonts:
+    - family: SpaceGrotesk
+      fonts:
+        - asset: assets/fonts/SpaceGrotesk/SpaceGrotesk-Regular-BF65712b4fdc934.ttf
+          weight: 400
+        - asset: assets/fonts/SpaceGrotesk/SpaceGrotesk-Light-BF65712b4fc80d0.ttf
+          weight: 300
+        - asset: assets/fonts/SpaceGrotesk/SpaceGrotesk-Medium-BF65712b4fd0ef9.ttf
+          weight: 500
+        - asset: assets/fonts/SpaceGrotesk/SpaceGrotesk-SemiBold-BF65712b4fe55fc.ttf
+          weight: 600
+        - asset: assets/fonts/SpaceGrotesk/SpaceGrotesk-Bold-BF65712b4f9ac68.ttf
+          weight: 700
+        - asset: assets/fonts/SpaceGrotesk/SpaceGrotesk-VariableFont_wght-BF65712b500c2f2.ttf
+
+    - family: JockeyOne
+      fonts:
+        - asset: assets/fonts/JockeyOne/JockeyOne-Regular.ttf

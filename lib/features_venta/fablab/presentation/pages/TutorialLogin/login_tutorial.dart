@@ -45,7 +45,7 @@ class _LoginPageState extends State<LoginPage> {
                       const LoginRegisterToggle(),
                       // Muestra el widget de Ingreso o Register según el estado
                       controller.selectedIndex == 0
-                          ? const Ingreso()
+                          ? Ingreso()
                           : const Register(),
                     ],
                   ),

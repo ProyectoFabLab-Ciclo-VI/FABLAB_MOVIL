@@ -24,7 +24,7 @@ class Menudrawer extends StatelessWidget {
                           CircleAvatar(
                             radius: 30,
                             backgroundImage:
-                                AssetImage("assets/images/esauprime.png"),
+                                AssetImage("assets/images/menu/foto1.png"),
                           ),
                           SizedBox(width: 20),
                           SizedBox(

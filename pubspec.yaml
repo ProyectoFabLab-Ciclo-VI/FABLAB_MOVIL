@@ -59,7 +59,16 @@ flutter:
     - assets/images/menu/foto6.png
     - assets/images/menu/pago.png
     - assets/images/menu/katana.png
+    - assets/images/menu/demon.png
+    - assets/images/menu/gato.png
+    - assets/images/menu/jugador.png
+    - assets/images/menu/mascara.png
+    - assets/images/menu/carro.png
     - assets/images/logo-azul.png
+    - assets/images/menu/carousel/gato2.png
+    - assets/images/menu/carousel/gato3.png
+    - assets/images/menu/carousel/gato4.png
+    - assets/images/menu/carousel/gato5.png
 
   fonts:
     - family: SpaceGrotesk

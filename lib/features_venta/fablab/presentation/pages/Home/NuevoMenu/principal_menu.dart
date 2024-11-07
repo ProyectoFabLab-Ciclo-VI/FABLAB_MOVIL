@@ -1,4 +1,5 @@
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Home/NuevoMenu/card_nuevo_menu.dart';
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/widgets/Otros_hastaponerleunnombre/appbar.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/widgets/Otros_hastaponerleunnombre/menu_drawer.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/widgets/Otros_hastaponerleunnombre/navbarinferior.dart';
 import 'package:fab_lab_upeu/shared/colores.dart';
@@ -15,16 +16,49 @@ class MenuPrincipal extends StatelessWidget {
 
     // Calcula el childAspectRatio basado en el ancho y altura de la pantalla
     double aspectRatio = screenWidth / (screenHeight / 2);
+    // Lista de datos
+    List<Map<String, String>> datos = [
+      {
+        'imagePath': 'assets/images/menu/katana.png',
+        'title': 'Katana Japonesa',
+        'description': 'Modelo Fotorrealista',
+        'price': 's/30'
+      },
+      {
+        'imagePath': 'assets/images/menu/gato.png',
+        'title': 'Escultura de un Gato',
+        'description': 'Modelo 3D de un Michi',
+        'price': 's/20'
+      },
+      {
+        'imagePath': 'assets/images/menu/mascara.png',
+        'title': 'Mascara de zorro',
+        'description': 'Modelo para Halloween',
+        'price': 's/15'
+      },
+      {
+        'imagePath': 'assets/images/menu/carro.png',
+        'title': 'Coche Fr',
+        'description': 'Modelo Moderno de un carro 4x1',
+        'price': 's/40'
+      },
+      {
+        'imagePath': 'assets/images/menu/jugador.png',
+        'title': 'Cristiano Ronaldo',
+        'description': 'El Siuuuuuu',
+        'price': 's/50'
+      },
+      {
+        'imagePath': 'assets/images/menu/demon.png',
+        'title': 'Zenitsu',
+        'description': 'El rayo amarillo',
+        'price': 's/25'
+      },
+    ];
 
     return Scaffold(
       drawer: const Menudrawer(),
-      appBar: AppBar(
-        title: Container(
-            padding: EdgeInsets.only(right: screenWidth * 0.093),
-            child: Center(child: Image.asset('assets/images/logo-azul.png'))),
-        backgroundColor: coloresPersonalizados[7],
-        toolbarHeight: 10.h,
-      ),
+      appBar: const AppBarCompra(),
       body: SafeArea(
           child: Container(
         color: coloresPersonalizados[7],
@@ -202,9 +236,9 @@ class MenuPrincipal extends StatelessWidget {
                       mainAxisSpacing: 3,
                       childAspectRatio: aspectRatio,
                     ),
-                    itemCount: 10,
+                    itemCount: datos.length,
                     itemBuilder: (context, index) {
-                      return const CardMenuNuevo();
+                      return CardMenuNuevo(data: datos[index]);
                     })),
           ],
         ),

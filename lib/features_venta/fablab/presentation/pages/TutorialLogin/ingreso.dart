@@ -1,5 +1,4 @@
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Home/NuevoMenu/principal_menu.dart';
-import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Home/home.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Login_Reset_Register/Reset/reset_password.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/widgets/TutorialLoginWidgets/form_builder.dart';
 import 'package:fab_lab_upeu/shared/textos.dart';

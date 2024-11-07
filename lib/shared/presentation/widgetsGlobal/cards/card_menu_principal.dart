@@ -1,4 +1,4 @@
-import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Home/Compra/buy_detalles.dart';
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Home/Compra/detalles/buy_detalles.dart';
 import 'package:flutter/material.dart';
 
 class CardsGlobal extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'package:fab_lab_upeu/di.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/bloc/Login_Reset_Register/login_register_controller.dart';
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Home/Compra/carrito/carrito.dart';
 
-import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/TutorialLogin/login_tutorial.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
@@ -23,9 +23,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Sizer(
       builder: (context, orientation, deviceType) {
-        return MaterialApp(
+        return const MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: LoginPage(),
+          home: CarroCompra(),
         );
       },
     );

@@ -7,6 +7,7 @@ class NAVBARINFERIOR extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+      
       backgroundColor: coloresPersonalizados[1],
       type: BottomNavigationBarType.fixed,
       items: const <BottomNavigationBarItem>[

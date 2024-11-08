@@ -1,5 +1,6 @@
 import 'package:fab_lab_upeu/shared/colores.dart';
 import 'package:fab_lab_upeu/shared/media_query.dart';
+import 'package:fab_lab_upeu/shared/textos.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -26,15 +27,47 @@ class DetallesPrecioAgregar extends StatelessWidget {
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('Escultura de un Gato',
-                style: TextStyle(color: coloresPersonalizados[4], fontSize: 20),
+                style: TextStyle(
+                  color: coloresPersonalizados[4],
+                  fontSize: 22.5.sp,
+                  fontFamily: 'JockeyOne',
+                ),
                 textAlign: TextAlign.left),
             const Row(),
             Text(
               'Escultura de un gato para impresión 3D.\n Altura del Modelo 100 mm.\n Representa un gato místico con un aspecto adorable y un toque de misterio',
-              style: TextStyle(fontSize: 17.sp),
+              style:
+                  TextStyle(fontSize: 17.sp, color: coloresPersonalizados[10]),
               textAlign: TextAlign.left,
+            ),
+            SizedBox(
+              height: 5.h,
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                minimumSize: Size(
+                    screenWidth(context) * 0.4, screenHeight(context) * 0.068),
+                backgroundColor: coloresPersonalizados[0],
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
+              onPressed: () {},
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  textoRegularBlanco(
+                    'Agregar al carrito',
+                  ),
+                  Icon(
+                    Icons.shopping_cart,
+                    color: coloresPersonalizados[3],
+                  )
+                ],
+              ),
             )
           ],
         ),

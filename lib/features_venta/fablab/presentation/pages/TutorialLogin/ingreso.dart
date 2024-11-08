@@ -20,6 +20,8 @@ class _IngresoState extends State<Ingreso> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
 
     return FormBuilder(
       key: _formKey2, // Agregar la clave aquí
@@ -104,7 +106,7 @@ class _IngresoState extends State<Ingreso> {
               }
             },
             style: ElevatedButton.styleFrom(
-              minimumSize: const Size(250, 50),
+              minimumSize: Size(screenHeight * 0.3, screenWidth * 0.12),
               backgroundColor: Colors.white,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(40),

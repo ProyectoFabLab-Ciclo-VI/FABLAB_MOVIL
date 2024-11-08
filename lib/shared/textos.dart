@@ -19,14 +19,14 @@ Text headers1(String cuerpo) {
 Text textoRegularBlanco(String cuerpo) {
   return Text(
     cuerpo,
-    style: TextStyle(fontSize: 14, color: coloresPersonalizados[3]),
+    style: TextStyle(fontSize: 17.sp, color: coloresPersonalizados[3]),
   );
 }
 
 Text textoRegularNegro(String cuerpo) {
   return Text(
     cuerpo,
-    style: TextStyle(fontSize: 0.26.dp, color: coloresPersonalizados[4]),
+    style: TextStyle(fontSize: 17.sp, color: coloresPersonalizados[4]),
   );
 }
 

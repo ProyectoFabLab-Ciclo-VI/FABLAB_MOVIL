@@ -1,3 +1,4 @@
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Home/Compra/carrito/modal_pago.dart';
 import 'package:fab_lab_upeu/shared/colores.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -35,7 +36,7 @@ class PagoTotal extends StatelessWidget {
               )),
           SizedBox(
             width: 30.w,
-            height: 4.h,
+            height: 3.h,
             child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.red,
@@ -51,11 +52,7 @@ class PagoTotal extends StatelessWidget {
                   showModalBottomSheet(
                       context: context,
                       builder: (BuildContext context) {
-                        return const SizedBox(
-                          width: double.infinity,
-                          height: 300,
-                          child: Text('Hola Mundo'),
-                        );
+                        return const ModalPago();
                       });
                 }),
           ),

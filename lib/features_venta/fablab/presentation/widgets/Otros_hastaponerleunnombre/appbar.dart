@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 class AppBarCompra extends StatelessWidget implements PreferredSizeWidget {
-  const AppBarCompra({super.key});
+  final int intColor;
+  const AppBarCompra({super.key, required this.intColor});
 
   @override
   Size get preferredSize => const Size.fromHeight(100);
@@ -15,7 +16,7 @@ class AppBarCompra extends StatelessWidget implements PreferredSizeWidget {
       title: Container(
           padding: EdgeInsets.only(right: screenWidth * 0.093),
           child: Center(child: Image.asset('assets/images/logo-azul.png'))),
-      backgroundColor: coloresPersonalizados[7],
+      backgroundColor: coloresPersonalizados[intColor],
       toolbarHeight: 10.h,
     );
   }

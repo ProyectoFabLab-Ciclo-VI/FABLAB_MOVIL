@@ -15,6 +15,12 @@ const List<Color> coloresPersonalizados = [
   Color(0xFFCDCDCD), //9
   Color(0xFF767474), //10
   Color(0xFF023072), //11
+  Color(0xFF464E57), //12
+  Color(0xFFF0F5FA), //13
+  Color(0xFFF4F5F7), //14
+  Color(0xFF32343E), //15
+  Color(0xFFF7F8F9), //16
+  Color(0xFF2D2D2D), //17
   // 6
   // Puedes agregar más colores personalizados aquí
 ];

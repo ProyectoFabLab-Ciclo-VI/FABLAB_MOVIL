@@ -18,7 +18,7 @@ class CarroCompra extends StatelessWidget {
     return Scaffold(
       backgroundColor: coloresPersonalizados[7],
       drawer: const Menudrawer(),
-      appBar: const AppBarCompra(),
+      appBar: const AppBarCompra(intColor: 7),
       body: SafeArea(
         child: Column(
           //Contenedor Super Padre

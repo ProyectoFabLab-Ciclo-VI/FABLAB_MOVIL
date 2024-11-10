@@ -12,7 +12,9 @@ class PrincipalMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       drawer: Menudrawer(),
-      appBar: AppBarCompra(),
+      appBar: AppBarCompra(
+        intColor: 7
+      ),
       body: SafeArea(
         child: Column(
           children: [

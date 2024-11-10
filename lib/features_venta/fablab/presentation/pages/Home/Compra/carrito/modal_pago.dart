@@ -1,3 +1,4 @@
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Pago/Tarjeta/metodo_pago.dart';
 import 'package:fab_lab_upeu/shared/colores.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -127,7 +128,12 @@ class ModalPago extends StatelessWidget {
                             'Pagar',
                             style: TextStyle(color: coloresPersonalizados[3]),
                           ),
-                          onPressed: () {}),
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const AddTarjeta()));
+                          }),
                     ),
                   ],
                 ),

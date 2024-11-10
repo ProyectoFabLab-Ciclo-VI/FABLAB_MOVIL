@@ -49,6 +49,12 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/icons/cash.png
+    - assets/icons/qrcode.png
+    - assets/icons/card.png
+    - assets/icons/mastercad.png
+    - assets/icons/paypal2.png
+    - assets/icons/visa.png
     - assets/images/logoblanco.png
     - assets/images/Icon-header.png
     - assets/images/menu/foto1.png

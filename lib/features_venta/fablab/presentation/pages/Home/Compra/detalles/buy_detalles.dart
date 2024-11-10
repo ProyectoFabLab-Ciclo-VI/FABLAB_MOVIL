@@ -29,7 +29,9 @@ class _DescripcioncompraState extends State<Descripcioncompra> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: coloresPersonalizados[7],
-      appBar: const AppBarCompra(),
+      appBar: const AppBarCompra(
+        intColor: 7
+      ),
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,

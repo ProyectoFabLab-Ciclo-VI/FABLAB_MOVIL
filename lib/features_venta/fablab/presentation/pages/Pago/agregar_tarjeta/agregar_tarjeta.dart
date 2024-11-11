@@ -1,6 +1,7 @@
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Home/NuevoMenu/principal_menu.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Pago/agregar_tarjeta/calendar_form.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Pago/agregar_tarjeta/form_builder_custom_pago.dart';
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Pago/verificacion_agregar_pago/verificacion_tarjeta.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/widgets/TutorialLoginWidgets/form_builder_login.dart';
 import 'package:fab_lab_upeu/shared/colores.dart';
 import 'package:fab_lab_upeu/shared/media_query.dart';
@@ -225,7 +226,7 @@ class _AgregarTarjetaState extends State<AgregarTarjeta> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const MenuPrincipal(),
+                                builder: (context) => const VerificacionTarjeta(),
                               ),
                             );
                           }

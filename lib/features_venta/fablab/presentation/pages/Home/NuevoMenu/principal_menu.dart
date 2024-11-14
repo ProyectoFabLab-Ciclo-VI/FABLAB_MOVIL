@@ -2,7 +2,7 @@ import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Home/Nuevo
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/widgets/Otros_hastaponerleunnombre/appbar.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/widgets/Otros_hastaponerleunnombre/menu_drawer.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/widgets/Otros_hastaponerleunnombre/navbarinferior.dart';
-import 'package:fab_lab_upeu/shared/colores.dart';
+import 'package:fab_lab_upeu/shared/Utils/colores.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 

@@ -1,7 +1,6 @@
-import 'package:fab_lab_upeu/di.dart';
-import 'package:fab_lab_upeu/features_venta/fablab/presentation/bloc/Login_Reset_Register/login_register_controller.dart';
-import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Pago/Tarjeta/metodo_pago.dart';
-import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Pago/agregar_tarjeta/agregar_tarjeta.dart';
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/bloc/login_register_controller.dart';
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Login_Reset_Register/Login/login.dart';
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Pago/Pago_exitoso_expera/pago_exitoso.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Pago/verificacion_agregar_pago/verificacion_tarjeta.dart';
 
 import 'package:flutter/material.dart';
@@ -9,7 +8,6 @@ import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
 void main() async {
-  await init();
   runApp(
     ChangeNotifierProvider(
       create: (_) => LoginRegisterController(),
@@ -27,7 +25,7 @@ class MyApp extends StatelessWidget {
       builder: (context, orientation, deviceType) {
         return const MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: AgregarTarjeta(),
+          home: PagoExitoso(),
         );
       },
     );

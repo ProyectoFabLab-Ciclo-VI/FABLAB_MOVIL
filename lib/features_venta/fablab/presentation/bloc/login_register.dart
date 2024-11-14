@@ -1,4 +1,4 @@
-import 'package:fab_lab_upeu/features_venta/fablab/presentation/bloc/Login_Reset_Register/login_register_controller.dart';
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/bloc/login_register_controller.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/widgets/Login_Reset_Register/Login/login_register_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

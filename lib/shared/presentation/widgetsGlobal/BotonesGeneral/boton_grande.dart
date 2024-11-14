@@ -1,4 +1,4 @@
-import 'package:fab_lab_upeu/shared/colores.dart';
+import 'package:fab_lab_upeu/shared/Utils/colores.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 

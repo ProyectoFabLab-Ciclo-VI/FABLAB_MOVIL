@@ -1,9 +1,10 @@
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Pago/Pago_exitoso_expera/pago_exitoso.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Pago/Tarjeta/boton_agregar_tarjeta.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Pago/Tarjeta/cars_visas.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Pago/agregar_tarjeta/agregar_tarjeta.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/widgets/Otros_hastaponerleunnombre/appbar.dart';
-import 'package:fab_lab_upeu/shared/colores.dart';
-import 'package:fab_lab_upeu/shared/media_query.dart';
+import 'package:fab_lab_upeu/shared/Utils/colores.dart';
+import 'package:fab_lab_upeu/shared/Utils/media_query.dart';
 import 'package:fab_lab_upeu/shared/presentation/widgetsGlobal/BotonesGeneral/boton_grande.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -174,7 +175,14 @@ class AddTarjeta extends StatelessWidget {
                         ),
                         child: LargeButton(
                           texto: 'Pagar',
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const PagoExitoso(),
+                              ),
+                            );
+                          },
                           indiceColorFondo: 0,
                           indiceColorTexto: 3,
                         ),

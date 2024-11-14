@@ -1,6 +1,7 @@
-import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Login_Reset_Register/Login/login_second.dart';
+
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Login_Reset_Register/Login/login.dart';
 import 'package:fab_lab_upeu/shared/presentation/widgetsGlobal/BotonesGeneral/boton_grande.dart';
-import 'package:fab_lab_upeu/shared/colores.dart';
+import 'package:fab_lab_upeu/shared/Utils/colores.dart';
 import 'package:flutter/material.dart';
 
 class CreacionExitoso extends StatelessWidget {
@@ -42,7 +43,7 @@ class CreacionExitoso extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const LoginLast(),
+                        builder: (context) => const LoginPage(),
                       ),
                     );
                   },

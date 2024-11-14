@@ -1,6 +1,6 @@
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Login_Reset_Register/Register/creacion_exitoso.dart';
 import 'package:fab_lab_upeu/shared/presentation/widgetsGlobal/BotonesGeneral/boton_grande.dart';
-import 'package:fab_lab_upeu/shared/colores.dart';
+import 'package:fab_lab_upeu/shared/Utils/colores.dart';
 import 'package:fab_lab_upeu/shared/presentation/widgetsGlobal/inputs/inputs_verificacion.dart';
 import 'package:flutter/material.dart';
 

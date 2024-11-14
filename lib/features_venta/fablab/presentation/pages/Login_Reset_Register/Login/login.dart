@@ -1,8 +1,8 @@
-import 'package:fab_lab_upeu/features_venta/fablab/presentation/bloc/Login_Reset_Register/login_register.dart';
-import 'package:fab_lab_upeu/features_venta/fablab/presentation/bloc/Login_Reset_Register/login_register_controller.dart';
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/bloc/login_register.dart';
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/bloc/login_register_controller.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Login_Reset_Register/Register/register.dart';
-import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/TutorialLogin/ingreso.dart';
-import 'package:fab_lab_upeu/shared/colores.dart';
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Login_Reset_Register/Login/username_password.dart';
+import 'package:fab_lab_upeu/shared/Utils/colores.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:provider/provider.dart';

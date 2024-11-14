@@ -1,5 +1,5 @@
-import 'package:fab_lab_upeu/shared/colores.dart';
-import 'package:fab_lab_upeu/shared/textos.dart';
+import 'package:fab_lab_upeu/shared/Utils/colores.dart';
+import 'package:fab_lab_upeu/shared/Utils/textos.dart';
 import 'package:flutter/material.dart';
 
 class Pago extends StatelessWidget {

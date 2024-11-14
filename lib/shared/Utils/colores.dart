@@ -21,6 +21,7 @@ const List<Color> coloresPersonalizados = [
   Color(0xFF32343E), //15
   Color(0xFFF7F8F9), //16
   Color(0xFF2D2D2D), //17
+  Color.fromARGB(166, 239, 242, 252), //18
   // 6
   // Puedes agregar más colores personalizados aquí
 ];

@@ -1,6 +1,7 @@
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/bloc/login_register_controller.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Login_Reset_Register/Login/login.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Pago/Pago_exitoso_expera/pago_exitoso.dart';
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Pago/qr/pago_qr.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Pago/verificacion_agregar_pago/verificacion_tarjeta.dart';
 
 import 'package:flutter/material.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       builder: (context, orientation, deviceType) {
         return const MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: PagoExitoso(),
+          home: PagoQR(),
         );
       },
     );

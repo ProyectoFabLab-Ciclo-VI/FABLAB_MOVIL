@@ -2,6 +2,7 @@ import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Pago/Pago_
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Pago/Tarjeta/boton_agregar_tarjeta.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Pago/Tarjeta/cars_visas.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Pago/agregar_tarjeta/agregar_tarjeta.dart';
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Pago/qr/pago_qr.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/widgets/Otros_hastaponerleunnombre/appbar.dart';
 import 'package:fab_lab_upeu/shared/Utils/colores.dart';
 import 'package:fab_lab_upeu/shared/Utils/media_query.dart';
@@ -125,41 +126,51 @@ class AddTarjeta extends StatelessWidget {
                         bottom: screenHeight(context) * 0.02,
                         right: screenWidth(context) * 0.04,
                       ),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: coloresPersonalizados[14],
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        width: double.infinity,
-                        height: 8.h,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(
-                                left: screenWidth(context) * 0.06,
-                                right: screenWidth(context) * 0.01,
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const PagoQR(),
+                            ),
+                          );
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: coloresPersonalizados[14],
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          width: double.infinity,
+                          height: 8.h,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(
+                                  left: screenWidth(context) * 0.06,
+                                  right: screenWidth(context) * 0.01,
+                                ),
+                                child: Image.asset('assets/icons/qrcode.png'),
                               ),
-                              child: Image.asset('assets/icons/qrcode.png'),
-                            ),
-                            Text(
-                              ' QR ',
-                              style: TextStyle(
-                                color: coloresPersonalizados[15],
-                                fontSize: 16.sp,
+                              Text(
+                                ' QR ',
+                                style: TextStyle(
+                                  color: coloresPersonalizados[15],
+                                  fontSize: 16.sp,
+                                ),
                               ),
-                            ),
-                            const Expanded(
-                              child: SizedBox(),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(
-                                left: screenWidth(context) * 0.01,
-                                right: screenWidth(context) * 0.05,
+                              const Expanded(
+                                child: SizedBox(),
                               ),
-                              child: const Icon(Icons.arrow_forward_ios),
-                            ),
-                          ],
+                              Padding(
+                                padding: EdgeInsets.only(
+                                  left: screenWidth(context) * 0.01,
+                                  right: screenWidth(context) * 0.05,
+                                ),
+                                child: const Icon(Icons.arrow_forward_ios),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),

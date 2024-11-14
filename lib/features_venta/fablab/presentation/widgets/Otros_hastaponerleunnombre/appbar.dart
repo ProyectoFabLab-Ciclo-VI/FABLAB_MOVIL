@@ -13,6 +13,7 @@ class AppBarCompra extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     return AppBar(
+      scrolledUnderElevation: 0,
       title: Container(
           padding: EdgeInsets.only(right: screenWidth * 0.093),
           child: Center(child: Image.asset('assets/images/logo-azul.png'))),

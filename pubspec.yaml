@@ -38,6 +38,8 @@ dependencies:
   sizer: ^3.0.3
   flutter_form_builder: ^9.5.0
   form_builder_validators: ^11.0.0
+  another_dashed_container: ^1.0.0
+  file_picker: ^8.1.4
 
 dev_dependencies:
   flutter_test:
@@ -75,6 +77,7 @@ flutter:
     - assets/images/menu/carousel/gato3.png
     - assets/images/menu/carousel/gato4.png
     - assets/images/menu/carousel/gato5.png
+    - assets/images/qrcodee2.png
 
   fonts:
     - family: SpaceGrotesk

@@ -58,9 +58,7 @@ class MenuPrincipal extends StatelessWidget {
 
     return Scaffold(
       drawer: const Menudrawer(),
-      appBar: const AppBarCompra(
-        intColor: 7
-      ),
+      appBar: const AppBarCompra(intColor: 7),
       body: SafeArea(
           child: Container(
         color: coloresPersonalizados[7],

@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       builder: (context, orientation, deviceType) {
         return const MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: PagoQR(),
+          home: LoginPage(),
         );
       },
     );

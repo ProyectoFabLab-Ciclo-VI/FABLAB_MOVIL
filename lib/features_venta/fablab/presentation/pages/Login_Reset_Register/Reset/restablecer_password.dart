@@ -3,6 +3,7 @@ import 'package:fab_lab_upeu/shared/presentation/widgetsGlobal/BotonesGeneral/bo
 import 'package:fab_lab_upeu/shared/Utils/colores.dart';
 import 'package:fab_lab_upeu/shared/presentation/widgetsGlobal/inputs/inputs_movil_email.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class Restablecerpassword extends StatelessWidget {
   const Restablecerpassword({super.key});
@@ -10,33 +11,26 @@ class Restablecerpassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: coloresPersonalizados[0],
+      backgroundColor: coloresPersonalizados[1],
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(16),
+            padding: EdgeInsets.all(6.w),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                const SizedBox(height: 20),
+                SizedBox(height: 3.h),
                 Image.asset('assets/images/Icon-header.png'),
-                const SizedBox(height: 100),
+                SizedBox(height: 10.h),
                 Text(
                   "Establecer una nueva contraseña",
                   style: TextStyle(
-                    fontSize: 24,
+                    fontSize: 19.sp,
                     color: coloresPersonalizados[5],
                   ),
                 ),
-                const SizedBox(height: 8),
-                // Text(
-                //   "Crea una nueva contraseña. Asegúrese de que sea diferente del anterior por seguridad",
-                //   style: TextStyle(
-                //     fontSize: 14,
-                //     color: coloresPersonalizados[5],
-                //   ),
-                // ),
-                const SizedBox(height: 50),
+                SizedBox(height: 1.h),
+                SizedBox(height: 10.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -48,14 +42,14 @@ class Restablecerpassword extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 8),
+                SizedBox(height: 1.h),
                 EmailInput(
                   controller: TextEditingController(),
                   hintText: 'Enter your ne password',
-                  width: 350,
-                  height: 42,
+                  width: 90.w,
+                  height: 10.h,
                 ),
-                const SizedBox(height: 40),
+                SizedBox(height: 6.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -67,14 +61,14 @@ class Restablecerpassword extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 8),
+                SizedBox(height: 1.h),
                 EmailInput(
                   controller: TextEditingController(),
                   hintText: 'Re-enter your passord',
-                  width: 350,
-                  height: 42,
+                  width: 90.w,
+                  height: 10.h,
                 ),
-                const SizedBox(height: 70),
+                SizedBox(height: 13.h),
                 LargeButton(
                   texto: 'Actualizar contraseña',
                   onPressed: () {
@@ -85,8 +79,8 @@ class Restablecerpassword extends StatelessWidget {
                       ),
                     );
                   },
-                  indiceColorFondo: 1,
-                  indiceColorTexto: 3,
+                  indiceColorFondo: 3,
+                  indiceColorTexto: 4,
                 ),
               ],
             ),

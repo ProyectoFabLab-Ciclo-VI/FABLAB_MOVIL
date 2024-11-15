@@ -38,10 +38,10 @@ class _LoginPageState extends State<LoginPage> {
                       // Condicional para mostrar/ocultar la imagen
                       if (controller.selectedIndex == 0)
                         SizedBox(
-                          height: 30.h,
+                          height: 24.h,
                           child: Image.asset('assets/images/logoblanco.png'),
                         ),
-                      SizedBox(height: 25.sp),
+                      SizedBox(height: 1.h),
                       const LoginRegisterToggle(),
                       // Muestra el widget de Ingreso o Register según el estado
                       controller.selectedIndex == 0

@@ -1,9 +1,12 @@
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/bloc/login_register_controller.dart';
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Login_Reset_Register/Login/login.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Login_Reset_Register/Reset/reset_password.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/widgets/Login_Reset_Register/Login/form_builder_login.dart';
 import 'package:fab_lab_upeu/shared/Utils/textos.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
+import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
 class Register extends StatelessWidget {
@@ -12,14 +15,13 @@ class Register extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final GlobalKey<FormBuilderState> _formkey = GlobalKey<FormBuilderState>();
-    var size = MediaQuery.of(context).size;
     return Column(
       children: [
         SizedBox(
-          height: 20.sp, // usando sizer
+          height: 3.h, // usando sizer
         ),
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
           child: FormBuilderCustom(
             name: 'Nombre',
             obscureText: false,
@@ -33,10 +35,10 @@ class Register extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: 5.sp,
+          height: 0.1.h,
         ),
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
           child: FormBuilderCustom(
             name: 'Apellidos',
             obscureText: false,
@@ -50,10 +52,10 @@ class Register extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: 5.sp,
+          height: 0.1.h,
         ),
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
           child: FormBuilderCustom(
             name: 'Username',
             obscureText: false,
@@ -67,10 +69,10 @@ class Register extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: 5.sp,
+          height: 0.1.h,
         ),
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
           child: FormBuilderCustom(
             name: 'password',
             obscureText: true,
@@ -86,10 +88,10 @@ class Register extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: 5.sp,
+          height: 0.1.h,
         ),
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
           child: FormBuilderCustom(
             name: 'Email',
             obscureText: false,
@@ -103,11 +105,11 @@ class Register extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: 5.sp,
+          height: 0.1.h,
         ),
         //Calendario
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
           child: FormBuilderDateTimePicker(
             name: 'Fecha de nacimiento',
             inputType: InputType.date,
@@ -145,11 +147,11 @@ class Register extends StatelessWidget {
         ),
         //calendario
         SizedBox(
-          height: 5.sp,
+          height: 0.1.h,
         ),
-        const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: FormBuilderCustom(
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
+          child: const FormBuilderCustom(
             name: 'Código',
             obscureText: false,
             hintText: 'Código (estudiantes)',
@@ -157,7 +159,7 @@ class Register extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: size.height * 0.04, // usando mediaquery
+          height: 3.h, // usando mediaquery
         ),
         ElevatedButton(
           onPressed: () {
@@ -168,6 +170,12 @@ class Register extends StatelessWidget {
               print("Email: ${y?['email']}");
               print("Password: ${y?['password']}");
             }
+            // Obtén el controlador y cambia el índice a 0
+            final controller =
+                Provider.of<LoginRegisterController>(context, listen: false);
+            controller.onItemTapped(0);
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const LoginPage()));
           },
           style: ElevatedButton.styleFrom(
             minimumSize: const Size(250, 50),

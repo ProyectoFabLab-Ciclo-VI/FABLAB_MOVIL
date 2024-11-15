@@ -3,6 +3,7 @@ import 'package:fab_lab_upeu/shared/presentation/widgetsGlobal/BotonesGeneral/bo
 import 'package:fab_lab_upeu/shared/Utils/colores.dart';
 import 'package:fab_lab_upeu/shared/presentation/widgetsGlobal/inputs/inputs_verificacion.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class Verificar extends StatelessWidget {
   const Verificar({super.key});
@@ -10,7 +11,7 @@ class Verificar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: coloresPersonalizados[0],
+        backgroundColor: coloresPersonalizados[1],
         body: SafeArea(
           child: SingleChildScrollView(
             child: Padding(
@@ -22,30 +23,33 @@ class Verificar extends StatelessWidget {
                     alignment: Alignment.centerLeft,
                     child: IconButton(
                       onPressed: () => Navigator.pop(context),
-                      icon: const Icon(Icons.keyboard_double_arrow_left_rounded),
-                      iconSize: 50,
+                      icon:
+                          const Icon(Icons.keyboard_double_arrow_left_rounded),
+                      iconSize: 0.4.dp,
                       color: coloresPersonalizados[5],
                     ),
                   ),
-                  const SizedBox(height: 20),
-                  Image.asset('assets/images/Icon-header.png'),
-                  const SizedBox(height: 50),
+                  SizedBox(height: 1.h),
+                  Image.asset(
+                    'assets/images/Icon-header.png',
+                  ),
+                  SizedBox(height: 5.h),
                   Text(
                     "Revisa tu correo electrónico",
                     style: TextStyle(
-                      fontSize: 24,
+                      fontSize: 20.sp,
                       color: coloresPersonalizados[5],
                     ),
                   ),
-                  const SizedBox(height: 20),
+                  SizedBox(height: 4.h),
                   Text(
                     "Enviamos enlace de reinicio de contraseña a tu correo electrónico.",
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: 15.sp,
                       color: coloresPersonalizados[5],
                     ),
                   ),
-                  const SizedBox(height: 50),
+                  SizedBox(height: 4.h),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
@@ -66,7 +70,7 @@ class Verificar extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 100),
+                  SizedBox(height: 20.h),
                   LargeButton(
                       texto: 'Verificar Codigo',
                       onPressed: () => {
@@ -76,8 +80,8 @@ class Verificar extends StatelessWidget {
                                     builder: (context) =>
                                         const Restablecerpassword()))
                           },
-                      indiceColorFondo: 1,
-                      indiceColorTexto: 3),
+                      indiceColorFondo: 3,
+                      indiceColorTexto: 4),
                   const SizedBox(height: 20),
                   Text(
                     '¿Aún no has recibido el correo electrónico?',

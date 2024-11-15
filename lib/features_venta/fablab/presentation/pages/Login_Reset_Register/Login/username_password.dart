@@ -28,10 +28,10 @@ class _IngresoState extends State<Ingreso> {
       child: Column(
         children: [
           SizedBox(
-            height: 40.sp, // usando sizer
+            height: 14.h, // usando sizer
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
             child: FormBuilderCustom(
               name: 'email',
               obscureText: false,
@@ -49,10 +49,10 @@ class _IngresoState extends State<Ingreso> {
             ),
           ),
           SizedBox(
-            height: 15.sp,
+            height: 1.h,
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
             child: FormBuilderCustom(
               name: 'password',
               obscureText: true,
@@ -76,7 +76,7 @@ class _IngresoState extends State<Ingreso> {
               );
             },
             child: Padding(
-              padding: const EdgeInsets.only(right: 14),
+              padding: EdgeInsets.only(right: 7.w),
               child: Align(
                 alignment: Alignment.centerRight,
                 child: textoRegularBlanco(

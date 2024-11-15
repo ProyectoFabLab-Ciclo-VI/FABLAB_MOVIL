@@ -1,8 +1,8 @@
-
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Login_Reset_Register/Login/login.dart';
 import 'package:fab_lab_upeu/shared/presentation/widgetsGlobal/BotonesGeneral/boton_grande.dart';
 import 'package:fab_lab_upeu/shared/Utils/colores.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class PasswordCambiada extends StatelessWidget {
   const PasswordCambiada({super.key});
@@ -10,7 +10,7 @@ class PasswordCambiada extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: coloresPersonalizados[0],
+      backgroundColor: coloresPersonalizados[1],
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
@@ -18,13 +18,13 @@ class PasswordCambiada extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset('assets/images/Icon-header.png'),
-                const SizedBox(height: 100),
+                SizedBox(height: 2.h),
                 Icon(Icons.check_circle,
-                    size: 100, color: coloresPersonalizados[2]),
+                    size: 0.8.dp, color: coloresPersonalizados[2]),
                 Text(
                   "Exitoso",
                   style: TextStyle(
-                    fontSize: 40,
+                    fontSize: 24.sp,
                     color: coloresPersonalizados[5],
                   ),
                 ),
@@ -36,19 +36,22 @@ class PasswordCambiada extends StatelessWidget {
                     color: coloresPersonalizados[5],
                   ),
                 ),
-                const SizedBox(height: 100),
-                LargeButton(
-                  texto: 'Continuar',
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const LoginPage(),
-                      ),
-                    );
-                  },
-                  indiceColorFondo: 1,
-                  indiceColorTexto: 3,
+                SizedBox(height: 23.h),
+                SizedBox(
+                  width: 40.w,
+                  child: LargeButton(
+                    texto: 'Continuar',
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const LoginPage(),
+                        ),
+                      );
+                    },
+                    indiceColorFondo: 3,
+                    indiceColorTexto: 4,
+                  ),
                 ),
               ],
             ),

@@ -62,7 +62,7 @@ class CentroCarrito extends StatelessWidget {
                         'Modelo 3D detallado para impresión 3D',
                         maxLines: 1,
                         style: TextStyle(
-                          fontSize: 0.22.dp,
+                          fontSize: 18.sp,
                           color: coloresPersonalizados[10],
                           overflow: TextOverflow.ellipsis,
                         ),
@@ -77,7 +77,7 @@ class CentroCarrito extends StatelessWidget {
                         textAlign: TextAlign.left,
                         style: TextStyle(
                           color: coloresPersonalizados[4],
-                          fontSize: 0.32.dp,
+                          fontSize: 20.sp,
                         ),
                       ),
                     ),

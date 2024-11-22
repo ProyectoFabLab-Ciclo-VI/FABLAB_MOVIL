@@ -1,4 +1,5 @@
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Home/NuevoMenu/card_nuevo_menu.dart';
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Home/NuevoMenu/filtro.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/widgets/Otros_hastaponerleunnombre/appbar.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/widgets/Otros_hastaponerleunnombre/menu_drawer.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/widgets/Otros_hastaponerleunnombre/navbarinferior.dart';
@@ -119,87 +120,30 @@ class MenuPrincipal extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Padding(
-                        padding: EdgeInsets.only(right: screenWidth * 0.028),
-                        child: Container(
-                          decoration: BoxDecoration(
-                              color: coloresPersonalizados[8],
-                              borderRadius: BorderRadius.circular(12),
-                              border: Border.all(
-                                  color: coloresPersonalizados[9], width: 1)),
-                          padding: EdgeInsets.only(
-                              left: screenWidth * 0.02,
-                              right: screenWidth * 0.02),
-                          height: double.infinity,
-                          child: Center(
-                            child: Text('Todos',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontFamily: 'SpaceGrotesk',
-                                    fontSize: 16.6.sp,
-                                    fontWeight: FontWeight.bold)),
-                          ),
-                        ),
-                      ),
+                          padding: EdgeInsets.only(right: screenWidth * 0.028),
+                          child: const FiltroMenu(
+                              text1: 'Todos', colortext: 3, colorfondo: 1)),
                       Padding(
-                        padding: EdgeInsets.only(right: screenWidth * 0.03),
-                        child: Container(
-                          decoration: BoxDecoration(
-                              color: coloresPersonalizados[3],
-                              borderRadius: BorderRadius.circular(12)),
-                          padding: EdgeInsets.only(
-                              left: screenWidth * 0.02,
-                              right: screenWidth * 0.02),
-                          height: double.infinity,
-                          child: Center(
-                            child: Text('Animales',
-                                style: TextStyle(
-                                    fontFamily: 'SpaceGrotesk',
-                                    color: coloresPersonalizados[4],
-                                    fontSize: 16.6.sp,
-                                    fontWeight: FontWeight.bold)),
-                          ),
-                        ),
-                      ),
+                          padding: EdgeInsets.only(right: screenWidth * 0.03),
+                          child: const FiltroMenu(
+                            text1: 'Animales',
+                            colorfondo: 3,
+                            colortext: 4,
+                          )),
                       Padding(
-                        padding: EdgeInsets.only(right: screenWidth * 0.03),
-                        child: Container(
-                          decoration: BoxDecoration(
-                              color: coloresPersonalizados[3],
-                              borderRadius: BorderRadius.circular(12)),
-                          padding: EdgeInsets.only(
-                              left: screenWidth * 0.02,
-                              right: screenWidth * 0.02),
-                          height: double.infinity,
-                          child: Center(
-                            child: Text('Espadas',
-                                style: TextStyle(
-                                    fontFamily: 'SpaceGrotesk',
-                                    color: coloresPersonalizados[4],
-                                    fontSize: 16.6.sp,
-                                    fontWeight: FontWeight.bold)),
-                          ),
-                        ),
-                      ),
+                          padding: EdgeInsets.only(right: screenWidth * 0.03),
+                          child: const FiltroMenu(
+                            text1: 'Espadas',
+                            colorfondo: 3,
+                            colortext: 4,
+                          )),
                       Padding(
-                        padding: EdgeInsets.only(right: screenWidth * 0.03),
-                        child: Container(
-                          decoration: BoxDecoration(
-                              color: coloresPersonalizados[3],
-                              borderRadius: BorderRadius.circular(12)),
-                          padding: EdgeInsets.only(
-                              left: screenWidth * 0.02,
-                              right: screenWidth * 0.02),
-                          height: double.infinity,
-                          child: Center(
-                            child: Text('Mascaras',
-                                style: TextStyle(
-                                    fontFamily: 'SpaceGrotesk',
-                                    color: coloresPersonalizados[4],
-                                    fontSize: 16.6.sp,
-                                    fontWeight: FontWeight.bold)),
-                          ),
-                        ),
-                      ),
+                          padding: EdgeInsets.only(right: screenWidth * 0.03),
+                          child: const FiltroMenu(
+                            text1: 'Mascaras',
+                            colorfondo: 3,
+                            colortext: 4,
+                          )),
                     ],
                   ),
                 ),

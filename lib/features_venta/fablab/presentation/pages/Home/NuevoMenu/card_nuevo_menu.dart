@@ -1,3 +1,7 @@
+import 'dart:convert';  // Para convertir la cadena base64
+import 'dart:typed_data'; // Para manejar el Uint8List
+
+import 'package:fab_lab_upeu/features_venta/fablab/domain/entities/modelos_predefinido.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Home/Compra/detalles/buy_detalles.dart';
 import 'package:fab_lab_upeu/shared/Utils/colores.dart';
 import 'package:flutter/material.dart';
@@ -5,13 +9,17 @@ import 'package:sizer/sizer.dart';
 
 class CardMenuNuevo extends StatelessWidget {
   final Map<String, String> data;
+  const CardMenuNuevo({super.key, required this.data, required this.modelosPredefinido});
 
-  const CardMenuNuevo({super.key, required this.data});
+  final ModelosPredefinido modelosPredefinido;
 
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
+
+    // Convertir la imagen base64 a Uint8List
+    Uint8List imageBytes = base64Decode(modelosPredefinido.imagen_1);
 
     return GestureDetector(
       onTap: () => {
@@ -33,8 +41,8 @@ class CardMenuNuevo extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
                 ),
-                child: Image.asset(
-                  data['imagePath'] ?? '',
+                child: Image.memory(
+                  imageBytes,  // Usamos los bytes de la imagen en base64
                   fit: BoxFit.contain,
                 ),
               ),
@@ -51,7 +59,7 @@ class CardMenuNuevo extends StatelessWidget {
                             height: 4.h,
                             color: coloresPersonalizados[3],
                             child: Text(
-                              data['title'] ?? '',
+                              modelosPredefinido.nombre,
                               style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 18.sp,
@@ -65,7 +73,7 @@ class CardMenuNuevo extends StatelessWidget {
                             color: coloresPersonalizados[3],
                             padding: EdgeInsets.only(left: screenWidth * 0.02),
                             child: Text(
-                              data['description'] ?? '',
+                              modelosPredefinido.comentario,
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
@@ -82,7 +90,7 @@ class CardMenuNuevo extends StatelessWidget {
                             ),
                             padding: EdgeInsets.only(left: screenWidth * 0.02),
                             child: Text(
-                              data['price'] ?? '',
+                              'S/. ${modelosPredefinido.precio}',
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(

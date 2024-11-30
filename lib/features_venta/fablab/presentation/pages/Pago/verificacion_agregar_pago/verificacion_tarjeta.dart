@@ -99,12 +99,12 @@ class _VerificacionTarjetaState extends State<VerificacionTarjeta> {
                           print("Código completo ingresado: $_codigoIngresado");
 
                           // Navegar a la siguiente página
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => AddTarjeta(),
-                            ),
-                          );
+                          // Navigator.push(
+                          //   context,
+                          //   MaterialPageRoute(
+                          //     builder: (context) => AddTarjeta(),
+                          //   ),
+                          // );
                         } else {
                           // Mostrar un mensaje si el código está incompleto
                           print("Por favor, ingrese el código completo.");

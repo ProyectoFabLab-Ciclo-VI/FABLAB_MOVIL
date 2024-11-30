@@ -4,7 +4,7 @@ import 'package:fab_lab_upeu/features_venta/fablab/domain/repositories/modelos_p
 class ModeloPredefinidoUsecase {
   final ModelosPredefinidoRepository modelosPredefinidoRepository;
 
-  ModeloPredefinidoUsecase({required this.modelosPredefinidoRepository});
+  ModeloPredefinidoUsecase(this.modelosPredefinidoRepository);
 
   Future<ModelosPredefinido> call(int modelopredefinidoid) async {
     return await modelosPredefinidoRepository

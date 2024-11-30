@@ -1,6 +1,7 @@
 import 'package:fab_lab_upeu/features_venta/fablab/data/datasources/modelo_remote_data_sources.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/data/models/modelos_model.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/domain/entities/modelos_predefinido.dart';
+import 'package:fab_lab_upeu/features_venta/fablab/domain/entities/post_modelos.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/domain/repositories/modelos_predefinido_repository.dart';
 
 class ModeloRepositoryImpl implements ModelosPredefinidoRepository {
@@ -23,5 +24,9 @@ class ModeloRepositoryImpl implements ModelosPredefinidoRepository {
     final json =
         await remoteDataSources.getmodelopredefinido(modelopredefinidoid);
     return ModeloPredefinidoModel.fromJson(json);
+  }
+   @override
+  Future<void> createModeloPredefinido(ModelosPredefinidoPost modelos) async {
+    await remoteDataSources.createModeloPredefinido( modelos);
   }
 }

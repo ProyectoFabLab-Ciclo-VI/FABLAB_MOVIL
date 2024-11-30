@@ -5,11 +5,48 @@ import 'package:fab_lab_upeu/shared/Utils/textos.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-class DetallesPrecioAgregar extends StatelessWidget {
-  const DetallesPrecioAgregar({super.key});
+class DetallesPrecioAgregar extends StatefulWidget {
+  final String imagen_1;
+  final double precio;
+  final String nombre;
+  final String descripcion;
+
+  const DetallesPrecioAgregar(
+      {super.key,
+      required this.precio,
+      required this.nombre,
+      required this.descripcion,
+      required this.imagen_1});
+
+  @override
+  State<DetallesPrecioAgregar> createState() => _DetallesPrecioAgregarState();
+}
+
+class _DetallesPrecioAgregarState extends State<DetallesPrecioAgregar> {
+  // Variable para mantener la cantidad
+  int cantidad = 1;
+
+  // Función para incrementar la cantidad
+  void incrementarCantidad() {
+    setState(() {
+      cantidad++;
+    });
+  }
+
+  // Función para decrementar la cantidad
+  void decrementarCantidad() {
+    if (cantidad > 0) {
+      setState(() {
+        cantidad--;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
+    // Calculamos el precio total (precio unitario * cantidad)
+    double precioTotal = widget.precio * cantidad;
+
     return SingleChildScrollView(
       child: Container(
         width: double.infinity,
@@ -31,38 +68,57 @@ class DetallesPrecioAgregar extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Escultura de un Gato',
+              // Nombre del producto
+              Text(widget.nombre,
                   style: TextStyle(
                     color: coloresPersonalizados[4],
                     fontSize: 22.5.sp,
                     fontFamily: 'JockeyOne',
                   ),
                   textAlign: TextAlign.left),
-              Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-                CircleAvatar(
-                    radius: 15.sp,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  // Botón para decrementar la cantidad
+                  CircleAvatar(
+                    radius: 0.3.dp,
                     backgroundColor: coloresPersonalizados[0],
-                    child: Icon(
-                      Icons.remove,
-                      color: coloresPersonalizados[5],
-                    )),
-                Text(
-                  '  0  ',
-                  style: TextStyle(fontSize: 20.sp),
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.remove,
+                        color: coloresPersonalizados[5],
+                      ),
+                      onPressed: decrementarCantidad,
+                    ),
+                  ),
+                  // Muestra la cantidad
+                  Text(
+                    '  $cantidad  ',
+                    style: TextStyle(fontSize: 20.sp),
+                  ),
+                  // Botón para incrementar la cantidad
+                  CircleAvatar(
+                    radius: 0.3.dp,
+                    backgroundColor: coloresPersonalizados[0],
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.add,
+                        color: coloresPersonalizados[5],
+                      ),
+                      onPressed: incrementarCantidad,
+                    ),
+                  ),
+                ],
+              ),
+              // Descripción del producto
+              SizedBox(
+                height: screenHeight(context) * 0.1,
+                child: Text(
+                  widget.descripcion,
+                  style: TextStyle(
+                      fontSize: 17.sp, color: coloresPersonalizados[10]),
+                  textAlign: TextAlign.left,
                 ),
-                CircleAvatar(
-                    radius: 15.sp,
-                    backgroundColor: coloresPersonalizados[0],
-                    child: Icon(
-                      Icons.add,
-                      color: coloresPersonalizados[5],
-                    )),
-              ]),
-              Text(
-                'Escultura de un gato para impresión 3D.\n Altura del Modelo 100 mm.\n Representa un gato místico con un aspecto adorable y un toque de misterio.',
-                style: TextStyle(
-                    fontSize: 17.sp, color: coloresPersonalizados[10]),
-                textAlign: TextAlign.left,
               ),
               Padding(
                 padding: EdgeInsets.only(
@@ -72,7 +128,7 @@ class DetallesPrecioAgregar extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.centerRight,
                   child: Text(
-                    "s/.20",
+                    "s/. ${precioTotal.toStringAsFixed(2)}", // Muestra el precio total
                     style: TextStyle(
                       color: coloresPersonalizados[4],
                       fontSize: 20.5.sp,
@@ -90,10 +146,17 @@ class DetallesPrecioAgregar extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
+                  // Pasar los datos al carrito de compra
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const CarroCompra()));
+                          builder: (context) => CarroCompra(
+                                imagen1: widget.imagen_1,
+                                precio: widget.precio,
+                                nombre: widget.nombre,
+                                descripcion: widget.descripcion,
+                                cantidads: cantidad,
+                              )));
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,

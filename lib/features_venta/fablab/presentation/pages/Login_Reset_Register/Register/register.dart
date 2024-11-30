@@ -1,4 +1,4 @@
-import 'package:fab_lab_upeu/features_venta/fablab/presentation/bloc/login_register_controller.dart';
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/bloc/Login/login_register_controller.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Login_Reset_Register/Login/login.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Login_Reset_Register/Reset/reset_password.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/widgets/Login_Reset_Register/Login/form_builder_login.dart';

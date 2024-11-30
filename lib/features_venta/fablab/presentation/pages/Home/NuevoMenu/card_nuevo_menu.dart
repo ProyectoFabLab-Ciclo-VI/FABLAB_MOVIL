@@ -1,16 +1,17 @@
-import 'dart:convert';  // Para convertir la cadena base64
-import 'dart:typed_data'; // Para manejar el Uint8List
-
 import 'package:fab_lab_upeu/features_venta/fablab/domain/entities/modelos_predefinido.dart';
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/bloc/modelo_predefinidos/modelo_bloc.dart';
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/bloc/modelo_predefinidos/modelo_event.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Home/Compra/detalles/buy_detalles.dart';
 import 'package:fab_lab_upeu/shared/Utils/colores.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
 
 class CardMenuNuevo extends StatelessWidget {
-  final Map<String, String> data;
-  const CardMenuNuevo({super.key, required this.data, required this.modelosPredefinido});
-
+  const CardMenuNuevo({
+    super.key,
+    required this.modelosPredefinido,
+  });
   final ModelosPredefinido modelosPredefinido;
 
   @override
@@ -18,13 +19,33 @@ class CardMenuNuevo extends StatelessWidget {
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
 
-    // Convertir la imagen base64 a Uint8List
-    Uint8List imageBytes = base64Decode(modelosPredefinido.imagen_1);
-
     return GestureDetector(
-      onTap: () => {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const Descripcioncompra()))
+      onTap: () async {
+        try {
+          // Disparar el evento para obtener el modelo por ID
+          BlocProvider.of<ModeloBloc>(context).add(GetModeloByIdEvent(
+              modeloPredefinidoId: modelosPredefinido.modelopredefinidoid));
+
+          // Navegar a la siguiente pantalla
+          await Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Descripcioncompra(
+                imagen_1:
+                    modelosPredefinido.imagen_1, // Pasar la imagen principal
+                precio: modelosPredefinido.precio, // Pasar el precio
+                nombre: modelosPredefinido.nombre, // Pasar el nombre
+                descripcion:
+                    modelosPredefinido.comentario, // Pasar la descripción
+              ),
+            ),
+          );
+        } catch (e) {
+          // Mostrar un mensaje de error si algo falla
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('Error: $e')),
+          );
+        }
       },
       child: Padding(
         padding: EdgeInsets.only(top: screenHeight * 0.005),
@@ -41,8 +62,9 @@ class CardMenuNuevo extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
                 ),
-                child: Image.memory(
-                  imageBytes,  // Usamos los bytes de la imagen en base64
+                child: Image.network(
+                  modelosPredefinido
+                      .imagen_1, // Usamos los bytes de la imagen en base64
                   fit: BoxFit.contain,
                 ),
               ),

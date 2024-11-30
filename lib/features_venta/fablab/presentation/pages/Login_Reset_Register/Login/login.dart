@@ -1,5 +1,5 @@
-import 'package:fab_lab_upeu/features_venta/fablab/presentation/bloc/login_register.dart';
-import 'package:fab_lab_upeu/features_venta/fablab/presentation/bloc/login_register_controller.dart';
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/bloc/Login/login_register.dart';
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/bloc/Login/login_register_controller.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Login_Reset_Register/Register/register.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Login_Reset_Register/Login/username_password.dart';
 import 'package:fab_lab_upeu/shared/Utils/colores.dart';

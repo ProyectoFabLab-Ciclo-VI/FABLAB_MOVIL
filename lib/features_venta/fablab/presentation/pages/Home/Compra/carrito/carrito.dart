@@ -7,8 +7,41 @@ import 'package:fab_lab_upeu/shared/Utils/colores.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-class CarroCompra extends StatelessWidget {
-  const CarroCompra({super.key});
+class CarroCompra extends StatefulWidget {
+  final String imagen1;
+  final double precio;
+  final String nombre;
+  final String descripcion;
+  final int cantidads;
+
+  const CarroCompra({
+    super.key,
+    required this.precio,
+    required this.nombre,
+    required this.descripcion,
+    required this.imagen1,
+    required this.cantidads,
+  });
+
+  @override
+  State<CarroCompra> createState() => _CarroCompraState();
+}
+
+class _CarroCompraState extends State<CarroCompra> {
+  double precioTotal = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    precioTotal =
+        widget.precio * widget.cantidads; // Inicializamos el precio total
+  }
+
+  void actualizarPrecioTotal(double nuevoTotal) {
+    setState(() {
+      precioTotal = nuevoTotal;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +54,6 @@ class CarroCompra extends StatelessWidget {
       appBar: const AppBarCompra(intColor: 7),
       body: SafeArea(
         child: Column(
-          //Contenedor Super Padre
           children: [
             Expanded(
               child: SizedBox(
@@ -34,10 +66,8 @@ class CarroCompra extends StatelessWidget {
                     child: Column(
                       children: [
                         Padding(
-                          //Busqueda
                           padding: EdgeInsets.symmetric(
-                              horizontal: screenWidth *
-                                  0.08), // Usando screenWidth // 5% del ancho de la pantalla
+                              horizontal: screenWidth * 0.08),
                           child: SizedBox(
                             width: double.infinity,
                             height: 5.5.h,
@@ -89,11 +119,19 @@ class CarroCompra extends StatelessWidget {
                         ),
                         Expanded(
                             child: ListView(
-                          children: const [
-                            CentroCarrito(),
-                            CentroCarrito(),
-                            CentroCarrito(),
-                            CentroCarrito(),
+                          children: [
+                            CentroCarrito(
+                              cantidads: widget.cantidads,
+                              imagen1: widget.imagen1,
+                              precio: widget.precio,
+                              nombre: widget.nombre,
+                              descripcion: widget.descripcion,
+                              onCantidadChanged: (nuevaCantidad) {
+                                // Actualiza el precio total cuando cambie la cantidad
+                                actualizarPrecioTotal(
+                                    widget.precio * nuevaCantidad);
+                              },
+                            ),
                           ],
                         )),
                       ],
@@ -103,7 +141,7 @@ class CarroCompra extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               height: 7.h,
-              child: PagoTotal(),
+              child: PagoTotal(precioTotal: precioTotal),
             ),
           ],
         ),

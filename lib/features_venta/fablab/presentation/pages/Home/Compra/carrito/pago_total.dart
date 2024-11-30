@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 class PagoTotal extends StatelessWidget {
-  const PagoTotal({super.key});
+  final double precioTotal;
+  const PagoTotal({super.key, required this.precioTotal});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,7 @@ class PagoTotal extends StatelessWidget {
                 fontFamily: 'SpaceGrotesk',
                 fontWeight: FontWeight.bold,
               )),
-          Text('PEN 95.00',
+          Text('PEN ${precioTotal.toStringAsFixed(2)}',
               style: TextStyle(
                 color: coloresPersonalizados[4],
                 fontSize: 17.sp,
@@ -52,7 +53,9 @@ class PagoTotal extends StatelessWidget {
                   showModalBottomSheet(
                       context: context,
                       builder: (BuildContext context) {
-                        return const ModalPago();
+                        return ModalPago(
+                          precioTotal: precioTotal ?? 0.0,
+                        );
                       });
                 }),
           ),

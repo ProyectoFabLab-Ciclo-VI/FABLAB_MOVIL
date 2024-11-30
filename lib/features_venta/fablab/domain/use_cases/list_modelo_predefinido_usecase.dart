@@ -1,4 +1,3 @@
-import 'package:fab_lab_upeu/features_venta/fablab/data/repositories/modelo_repository.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/domain/entities/modelos_predefinido.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/domain/repositories/modelos_predefinido_repository.dart';
 

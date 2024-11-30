@@ -1,5 +1,5 @@
-class ModelosPredefinido {
-  final int modelopredefinidoid;
+class ModelosPredefinidoPost {
+  final int? modelopredefinidoid;
   final String nombre;
   final String codigo;
   final String comentario;
@@ -10,8 +10,8 @@ class ModelosPredefinido {
   final String imagen4;
   final int insumoid;
 
-  ModelosPredefinido({
-    required this.modelopredefinidoid,
+  ModelosPredefinidoPost({
+     this.modelopredefinidoid,
     required this.nombre,
     required this.codigo,
     required this.comentario,

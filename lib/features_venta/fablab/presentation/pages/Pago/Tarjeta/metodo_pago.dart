@@ -11,7 +11,8 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 class AddTarjeta extends StatelessWidget {
-  const AddTarjeta({super.key});
+  final double precioTotal;
+  const AddTarjeta({super.key, required this.precioTotal});
 
   @override
   Widget build(BuildContext context) {
@@ -131,7 +132,9 @@ class AddTarjeta extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const PagoQR(),
+                              builder: (context) => PagoQR(
+                                precioTotal: precioTotal ?? 0.0,
+                              ),
                             ),
                           );
                         },

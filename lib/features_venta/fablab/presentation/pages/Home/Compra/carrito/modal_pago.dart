@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 class ModalPago extends StatelessWidget {
-  const ModalPago({super.key});
+  final double precioTotal; // Aceptamos precioTotal como parámetro
+
+  const ModalPago({super.key, required this.precioTotal}); // Constructor para recibir el precio total
 
   @override
   Widget build(BuildContext context) {
@@ -34,40 +36,7 @@ class ModalPago extends StatelessWidget {
                     SizedBox(
                       width: 1.w,
                     ),
-                    IconButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                        // acción al presionar el botón
-                      },
-                      icon: Icon(
-                        Icons.close,
-                        color: coloresPersonalizados[
-                            4], // Cambia el color del ícono aquí
-                      ),
-                      splashColor: Colors
-                          .transparent, // Elimina el efecto de splash al presionar
-                      highlightColor: Colors.transparent,
-                      padding: EdgeInsets.only(
-                          bottom: 0.2
-                              .h), // Elimina el efecto al mantener presionado
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 3.h,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text('Subtotal',
-                        style: TextStyle(
-                          color: coloresPersonalizados[4],
-                          fontSize: 16.sp,
-                        )),
-                    SizedBox(
-                      width: 1.w,
-                    ),
-                    Text('PEN 90.00',
+                    Text('PEN ${precioTotal.toStringAsFixed(2)}', // Muestra el precio total
                         style: TextStyle(
                           color: coloresPersonalizados[4],
                           fontSize: 16.sp,
@@ -108,7 +77,7 @@ class ModalPago extends StatelessWidget {
                           fontFamily: 'SpaceGrotesk',
                           fontWeight: FontWeight.bold,
                         )),
-                    Text('PEN 95.00',
+                    Text('PEN ${(precioTotal + 5.00).toStringAsFixed(2)}', // Total final (con envío)
                         style: TextStyle(
                           color: coloresPersonalizados[4],
                           fontSize: 17.sp,
@@ -132,7 +101,7 @@ class ModalPago extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const AddTarjeta()));
+                                    builder: (context) =>  AddTarjeta(precioTotal : precioTotal)));
                           }),
                     ),
                   ],

@@ -2,20 +2,67 @@ import 'package:fab_lab_upeu/shared/Utils/colores.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-class CentroCarrito extends StatelessWidget {
-  const CentroCarrito({super.key});
+class CentroCarrito extends StatefulWidget {
+  final String imagen1;
+  final double precio;
+  final String nombre;
+  final String descripcion;
+  final int cantidads;
+  final ValueChanged<int>
+      onCantidadChanged; // Callback para actualizar la cantidad
+
+  const CentroCarrito({
+    super.key,
+    required this.precio,
+    required this.nombre,
+    required this.descripcion,
+    required this.imagen1,
+    required this.cantidads,
+    required this.onCantidadChanged,
+  });
+
+  @override
+  State<CentroCarrito> createState() => _CentroCarritoState();
+}
+
+class _CentroCarritoState extends State<CentroCarrito> {
+  int cantidad = 1;
+
+  @override
+  void initState() {
+    super.initState();
+    cantidad = widget.cantidads;
+  }
+
+  void incrementarCantidad() {
+    setState(() {
+      cantidad++;
+      widget.onCantidadChanged(
+          cantidad); // Llamar al callback con la nueva cantidad
+    });
+  }
+
+  void decrementarCantidad() {
+    if (cantidad > 1) {
+      setState(() {
+        cantidad--;
+        widget.onCantidadChanged(
+            cantidad); // Llamar al callback con la nueva cantidad
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
+    double precioTotal = widget.precio * cantidad;
 
     return Padding(
       padding: EdgeInsets.only(
         top: screenHeight * 0.01,
       ),
       child: SizedBox(
-        // Contenedor Padre
         width: double.infinity,
         height: 18.h,
         child: Row(
@@ -28,8 +75,8 @@ class CentroCarrito extends StatelessWidget {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: Image.asset(
-                'assets/images/menu/gato.png',
+              child: Image.network(
+                widget.imagen1,
                 fit: BoxFit.contain,
                 filterQuality: FilterQuality.high,
               ),
@@ -45,11 +92,11 @@ class CentroCarrito extends StatelessWidget {
                       width: double.infinity,
                       height: 3.5.h,
                       child: Text(
-                        'Escultura de un Gato',
+                        widget.nombre,
                         textAlign: TextAlign.left,
                         maxLines: 1,
                         style: TextStyle(
-                          fontSize: 0.26.dp,
+                          fontSize: 20.5.sp,
                           fontFamily: 'JockeyOne',
                           overflow: TextOverflow.ellipsis,
                         ),
@@ -59,7 +106,7 @@ class CentroCarrito extends StatelessWidget {
                       width: double.infinity,
                       height: 3.h,
                       child: Text(
-                        'Modelo 3D detallado para impresión 3D',
+                        widget.descripcion,
                         maxLines: 1,
                         style: TextStyle(
                           fontSize: 18.sp,
@@ -73,7 +120,7 @@ class CentroCarrito extends StatelessWidget {
                       width: double.infinity,
                       height: 4.h,
                       child: Text(
-                        "s/.20",
+                        "s/. ${precioTotal.toStringAsFixed(2)}",
                         textAlign: TextAlign.left,
                         style: TextStyle(
                           color: coloresPersonalizados[4],
@@ -86,7 +133,7 @@ class CentroCarrito extends StatelessWidget {
               ),
             ),
             SizedBox(
-              width: screenWidth * 0.2,
+              width: screenWidth * 0.25,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -108,25 +155,35 @@ class CentroCarrito extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         CircleAvatar(
-                            radius: 15.sp,
-                            backgroundColor: coloresPersonalizados[0],
-                            child: Icon(
+                          radius: 0.25.dp,
+                          backgroundColor: coloresPersonalizados[0],
+                          child: IconButton(
+                            icon: Icon(
                               Icons.remove,
                               color: coloresPersonalizados[5],
-                            )),
+                              size: 0.23.dp,
+                            ),
+                            onPressed: decrementarCantidad,
+                          ),
+                        ),
                         Text(
-                          ' 0 ',
+                          ' $cantidad ',
                           style: TextStyle(
                             fontSize: 17.sp,
                           ),
                         ),
                         CircleAvatar(
-                            radius: 15.sp,
-                            backgroundColor: coloresPersonalizados[0],
-                            child: Icon(
+                          radius: 0.25.dp,
+                          backgroundColor: coloresPersonalizados[0],
+                          child: IconButton(
+                            icon: Icon(
                               Icons.add,
                               color: coloresPersonalizados[5],
-                            )),
+                              size: 0.23.dp,
+                            ),
+                            onPressed: incrementarCantidad,
+                          ),
+                        ),
                       ],
                     ),
                   ),

@@ -15,3 +15,19 @@ class ModeloError extends ModeloState {
 
   ModeloError({required this.message});
 }
+
+// Estado para cuando se carga un modelo por ID
+class ModeloByIdLoaded extends ModeloState {
+  final ModelosPredefinido modelo;
+
+  ModeloByIdLoaded({required this.modelo});
+}
+
+class ModeloByIdError extends ModeloState {
+  final String message;
+
+  ModeloByIdError({required this.message});
+}
+
+class ModeloCreated extends ModeloState {}
+

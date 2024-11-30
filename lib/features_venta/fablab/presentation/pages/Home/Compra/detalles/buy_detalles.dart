@@ -1,6 +1,6 @@
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Home/Compra/detalles/descripcion_precio_agregar.dart';
 import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Home/Compra/detalles/tipo_materiales_usar.dart';
-import 'package:fab_lab_upeu/features_venta/fablab/presentation/widgets/Otros_hastaponerleunnombre/appbar.dart';
+import 'package:fab_lab_upeu/features_venta/fablab/presentation/pages/Home/NuevoMenu/principal_menu.dart';
 import 'package:fab_lab_upeu/shared/Utils/colores.dart';
 import 'package:fab_lab_upeu/shared/Utils/media_query.dart';
 
@@ -8,7 +8,16 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 class Descripcioncompra extends StatefulWidget {
-  const Descripcioncompra({super.key});
+  final String imagen_1;
+  final double precio;
+  final String nombre;
+  final String descripcion;
+  const Descripcioncompra(
+      {super.key,
+      required this.imagen_1,
+      required this.precio,
+      required this.nombre,
+      required this.descripcion});
 
   @override
   State<Descripcioncompra> createState() => _DescripcioncompraState();
@@ -16,21 +25,36 @@ class Descripcioncompra extends StatefulWidget {
 
 class _DescripcioncompraState extends State<Descripcioncompra> {
   int _currentIndex = 0;
-
-  final List<String> imagePaths = [
-    'assets/images/menu/gato.png',
-    'assets/images/menu/carousel/gato2.png',
-    'assets/images/menu/carousel/gato3.png',
-    'assets/images/menu/carousel/gato4.png',
-    'assets/images/menu/carousel/gato5.png'
-  ];
+  final List<String> imagePaths = [];
+  @override
+  void initState() {
+    super.initState();
+    // Agregar la misma imagen 4 veces al carrusel
+    imagePaths.addAll(
+        [widget.imagen_1, widget.imagen_1, widget.imagen_1, widget.imagen_1]);
+  }
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth2 = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: coloresPersonalizados[7],
-      appBar: const AppBarCompra(
-        intColor: 7
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => MenuPrincipal()),
+            );
+          },
+        ),
+        scrolledUnderElevation: 0,
+        title: Container(
+            padding: EdgeInsets.only(right: screenWidth2 * 0.093),
+            child: Center(child: Image.asset('assets/images/logo-azul.png'))),
+        backgroundColor: coloresPersonalizados[7],
+        toolbarHeight: 10.h,
       ),
       body: SafeArea(
         child: Column(
@@ -60,7 +84,7 @@ class _DescripcioncompraState extends State<Descripcioncompra> {
                             });
                           }),
                           itemBuilder: (context, index) {
-                            return Image.asset(
+                            return Image.network(
                               imagePaths[index],
                               fit: BoxFit.contain,
                               filterQuality: FilterQuality.high,
@@ -79,7 +103,13 @@ class _DescripcioncompraState extends State<Descripcioncompra> {
               ),
               child: const TipoMaterialUsar(),
             ),
-            const Expanded(child: DetallesPrecioAgregar())
+            Expanded(
+                child: DetallesPrecioAgregar(
+              imagen_1: widget.imagen_1,
+              precio: widget.precio,
+              nombre: widget.nombre,
+              descripcion: widget.descripcion,
+            ))
           ],
         ),
       ),
